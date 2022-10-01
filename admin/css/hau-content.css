@@ -1,0 +1,51 @@
+.hau-admin-content{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 5% 25% 10% 10% 10% 10% 10% 10% 10%;
+    border: 1px solid #ccc;
+}
+
+.hau-admin-content label{
+    margin: auto 1px;
+    font-family: "SF Pro";
+}
+
+.hau-table-header{
+    font-weight: 700;
+    padding: 2px 0px;
+    margin-bottom: 3px;
+}
+
+.hau-container{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hau-admin-footer{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+@media (max-width: 768px) {
+    *{
+        margin: 2px;
+        padding: 0px;
+    }
+    .hau-container{
+        overflow: scroll;
+        height: 70vh;
+        width: 100%;
+        display: flex;
+    }
+    .hau-admin-content{
+        min-width: 200px;
+        height: 100%;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: 5% 25% 10% 10% 10% 10% 10% 10% 10%;
+    }
+    .hau-admin-content label{
+        overflow: display;
+    }
+}
