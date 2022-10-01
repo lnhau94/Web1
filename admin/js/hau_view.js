@@ -71,7 +71,7 @@ function showContent() {
 }
 
 function showProduct(){
-    let text = `
+    let headerText = `
         <div class="hau-table-header hau-admin-content" id="hau-admin-product-header">
             <label>id</label>
             <label>Tên sản phẩm</label>
@@ -85,8 +85,10 @@ function showProduct(){
             
         </div>
     `;
+
+    let contentText = ``;
     keyboards.forEach( (item) => {
-        text += `
+        contentText += `
             <div class="hau-table-item hau-admin-content" data-id="${"item"+item.id}">
                 <label></label>
                 <label>keyboardname: ${item.name}</label>
@@ -98,10 +100,10 @@ function showProduct(){
                 <label>
                     
                 </label>
-                <label>
+                <div>
                     <button type="button">Sửa</button>
                     <button type="button">Xóa</button>
-                </label>
+                </div>
             </div>
         `
     });
@@ -110,15 +112,16 @@ function showProduct(){
             <h1 class="page-title">Product</h1>
         </div>
         
-        <div class="hau-container">
-            ${text+text}
-        </div>
-
         <div class="hau-admin-footer" id="hau-product-footer">
             <button type="button" class="hau-admin-button" id="hau-product-button">
                 Thêm mới
             </button>
         </div>
+        
+        <div class="hau-container">
+            ${headerText+contentText+contentText+contentText+contentText+contentText+contentText+contentText+contentText+contentText+contentText+contentText+contentText}
+        </div>
+
     `;
     return template;
 }
