@@ -1,31 +1,59 @@
+#root{
+    --dark-color: #426696;
+    --darker-grey-color: #070d2c;
+    --light-color: #65dfc9;
+    --lighter-color: #fff;
+}
+
 .hau-admin-content{
     width: 100%;
+    min-height: 50px;
     display: grid;
     grid-template-columns: 5% 25% 10% 10% 10% 10% 10% 10% 10%;
     border: 1px solid #ccc;
+    margin: 10px;
+    border-radius: 5px;
+    /*box-shadow: rgb(207, 207, 207) 5px 3px 3px ;*/
 }
 
 .hau-admin-content label{
+    box-sizing: border-box;
     margin: auto 1px;
-    font-family: "SF Pro";
+    font-family: "SF Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+    text-transform: capitalize;;
+    padding: 1px;
 }
 
 .hau-table-header{
     font-weight: 700;
     padding: 2px 0px;
     margin-bottom: 3px;
+    background-color: rgba(255, 255, 255, 0.95) ;
+    color: var(--darker-grey-color);
+    position: -webkit-sticky;
+    position: sticky;
+    top: 15%;
+}
+
+.hau-table-item{
+    background-color: rgba(255, 255, 255, 0.8) ;
+    color: #161c3e;
+}
+.hau-table-item button{
+    width: 50px;;
 }
 
 .hau-container{
+    width: 95%;
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
 .hau-admin-footer{
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
+    display: block;
+    float: right;
+    padding: 5px;
 }
 @media (max-width: 768px) {
     *{
