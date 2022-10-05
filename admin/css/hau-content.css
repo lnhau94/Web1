@@ -9,12 +9,17 @@
     width: 100%;
     min-height: 50px;
     display: grid;
-    grid-template-columns: 5% 25% 10% 10% 10% 10% 10% 10% 10%;
+    grid-template-columns: 5% 25% 10% 15% 15% 10% 10% 10%;
     border: 1px solid #ccc;
     margin: 10px;
     border-radius: 5px;
     /*box-shadow: rgb(207, 207, 207) 5px 3px 3px ;*/
 }
+
+.hau-admin-content:nth-child(2n+1){
+    background-color: rgba(255, 255, 255, 0.95) ;
+}
+
 
 .hau-admin-content label{
     box-sizing: border-box;
@@ -36,7 +41,7 @@
 }
 
 .hau-table-item{
-    background-color: rgba(255, 255, 255, 0.8) ;
+    background-color: rgba(255, 255, 255, 0.7) ;
     color: #161c3e;
 }
 .hau-table-item button{
@@ -71,7 +76,7 @@
         height: 100%;
         display: grid;
         grid-template-columns: auto;
-        grid-template-rows: 5% 25% 10% 10% 10% 10% 10% 10% 10%;
+        grid-template-rows: 5% 25% 10% 15% 15% 10% 10% 10% ;
     }
     .hau-admin-content label{
         overflow: display;

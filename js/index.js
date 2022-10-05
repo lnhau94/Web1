@@ -1,0 +1,1 @@
+document.getElementById("gotoAdmin").onclick = () => location.assign("/admin/index.html");

@@ -1,4 +1,4 @@
-import {keyboards} from "./hau_model.js";
+import {keyboards} from "../Model/hau_model.js";
 
 let nav = renderNav();
 let content = renderContent();
@@ -73,13 +73,12 @@ function showContent() {
 function showProduct(){
     let headerText = `
         <div class="hau-table-header hau-admin-content" id="hau-admin-product-header">
-            <label>id</label>
+            <label>STT</label>
             <label>Tên sản phẩm</label>
             <label>Giá</label>
             <label>Hãng sản xuất</label>
             <label>Loại Switch</label>
             <label>Led</label>
-            <label>Màu</label>
             <label>Kiểu kết nối</label>
             <label>Lựa chọn</label>
             
@@ -90,10 +89,9 @@ function showProduct(){
     keyboards.forEach( (item) => {
         contentText += `
             <div class="hau-table-item hau-admin-content" data-id="${"item"+item.id}">
-                <label></label>
+                <label>${keyboards.indexOf(item)+1}</label>
                 <label>keyboardname: ${item.name}</label>
                 <label>price: ${item.price}</label>
-                <label></label>
                 <label></label>
                 <label></label>
                 <label></label>
@@ -101,10 +99,11 @@ function showProduct(){
                     
                 </label>
                 <div>
-                    <button type="button">Sửa</button>
+                    <button type="button" class="hau-button-2 onclick="remove()">Sửa</button>
                     <button type="button">Xóa</button>
                 </div>
             </div>
+            
         `
     });
     let template = `
@@ -119,12 +118,13 @@ function showProduct(){
         </div>
         
         <div class="hau-container">
-            ${headerText+contentText+contentText+contentText+contentText+contentText+contentText+contentText+contentText+contentText+contentText+contentText+contentText}
+            ${headerText+contentText}
         </div>
 
     `;
     return template;
 }
+
 
 function showDashboard(){
     return `
@@ -132,7 +132,15 @@ function showDashboard(){
     `
 }
 
+const removeBtns = document.querySelectorAll('.hau-button-2');
+removeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        console.log();
+    })
+})
+
 window.onhashchange = () => showContent();
+document.getElementById("hau-admin-logout-button").onclick = () => location.assign("/index.html");
 
 
 export {

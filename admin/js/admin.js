@@ -1,1 +1,1 @@
-import { page } from "./hau_view.js";
+import { page } from "./View/hau_view.js";
