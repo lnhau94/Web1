@@ -10,7 +10,7 @@
     margin: 5px;
     background-color: #e0e0e0;
     background: linear-gradient(
-        to right top, #070d2c 51%, #161c3e 50%);
+        to right top, #070d2c 50%, #161c3e 50%);
     border-radius: 20px;
 }
 
@@ -23,7 +23,15 @@
     position: relative;
     display: block;
 }
-
+.hau-nav.test-nav {
+    display: none;
+}
+.hau-content.test-content {
+    display: none;
+}
+#root.test-root {
+    display: none;
+}
 .hau-navitem{
     text-align: center;
     margin: 5px;
