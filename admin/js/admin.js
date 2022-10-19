@@ -1,1 +1,3 @@
-import { page } from "./View/hau_view.js";
+import { controller } from "./Controller/hau_controller.js";
+
+controller.init();
