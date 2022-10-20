@@ -317,7 +317,7 @@ function addBrand() {
 }
 function btnCancelActive() {
   allFrame.classList.add("huy-close-all-frame");
-  localStorage.clear();
+  //localStorage.clear();
 }
 function btnAcceptActive() {
   let checkName = false;
