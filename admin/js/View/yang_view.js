@@ -15,8 +15,8 @@ export const view = {
                     <span></span>
                 </div>
                 <button type="submit" class="btn-submit-log">Đăng nhập</button>
-                <div class="signin-link">
-                    <a href="../sign_up_(3)/index.html">Đăng kí</a>
+                <div class="signin-link" id="btn-signin">
+                    Đăng kí
                 </div>
             </form>
         </div>
@@ -34,7 +34,6 @@ export const view = {
                         <small></small>
                         <span></span>
                     </div>
-        
                     <div class="form-control">
                         <input id="password" type="password" placeholder="Mật khẩu">
                         <small></small>
