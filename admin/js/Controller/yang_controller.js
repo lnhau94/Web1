@@ -66,9 +66,18 @@ export const loginController = {
         }
         return null;
     },
-
     showSignupForm() {
- 
         document.getElementById('root').innerHTML = view.renderRegistrationForm();
+        
+        let btnsignup = document.getElementById('btn-signup');
+        let btnsignin = document.getElementById('btn-signin');
+        btnsignup.addEventListener('click',e => {
+            e.preventDefault();
+        })
+        btnsignin.addEventListener('click',e => {
+            e.preventDefault();
+            loginController.showSigninForm();
+        })
+        
     }
 }

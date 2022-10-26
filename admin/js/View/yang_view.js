@@ -63,8 +63,8 @@ export const view = {
                     </div>
                 </div>
             </div>
-            <button class="btn-submit">Đăng kí</button>
-            <div class="signup-link">
+            <button class="btn-submit" id="btn-signup">Đăng kí</button>
+            <div class="signup-link" id="btn-signin">
                 Đăng nhập
             </div>
         </form>
