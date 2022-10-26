@@ -15,10 +15,18 @@ export const view = {
                     <div class="hau-nav-button" id="productBtn">Product</div>
                     <div class="hau-nav-button" id="orderBtn">Order</div>
                     <div class="hau-nav-button" id="accountBtn">Account</div>
+                    <div class="hau-nav-button-animation"></div>
                 </div>
                 <div class="hau-nav-logout" id="logout">Logout</div>
             </div>
         `
+    },
+    changeCurrentBtn(btn){
+        let current = document.querySelector('.hau-current-btn');
+        if (current != null) {
+            current.classList.remove('hau-current-btn');
+        }
+        btn.classList.add('hau-current-btn');
     },
     renderContent(){
         return `

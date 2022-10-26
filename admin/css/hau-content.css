@@ -3,6 +3,7 @@
     --darker-grey-color: #070d2c;
     --light-color: #65dfc9;
     --lighter-color: #fff;
+    --chosen-position: 0px;
     position: absolute;
     top: 0px;
     width: 100%;
@@ -51,11 +52,16 @@ html, body {
 }
 
 .hau-nav-button-holder{
+    position: relative;
     height: 60%;
 }
-.hau-nav-button:hover,.hau-nav-logout:hover{
+/* .hau-nav-button:hover, */
+.hau-nav-logout:hover{
     background-color: whitesmoke;
     color: #FF8787;
+    cursor: pointer;
+}
+.hau-nav-button:hover{
     cursor: pointer;
 }
 
@@ -63,6 +69,39 @@ html, body {
     height: 50px;
     line-height: 50px;
     font-size: 20px;
+    z-index: 1;
+    position: relative;
+}
+
+.hau-nav-button-animation{
+    position: absolute;
+    height: 50px;
+    width: 100%;
+    z-index: -1;
+    border: #65dfc9 2px solid;
+    top: var(--chosen-position);
+    transition: all .5s ease 0s;
+}
+
+#dashboardBtn:hover~.hau-nav-button-animation{
+    --chosen-position: 0px;
+    z-index: 0;
+}
+#productBtn:hover~.hau-nav-button-animation{
+    --chosen-position: 50px;
+    z-index: 0;
+}
+#orderBtn:hover~.hau-nav-button-animation{
+    --chosen-position: 100px;
+    z-index: 0;
+}
+#accountBtn:hover~.hau-nav-button-animation{
+    --chosen-position: 150px;
+    z-index: 0;
+}
+.hau-current-btn{
+    background-color: rgb(54, 210, 212);
+    transition: 0.5s;
 }
 
 .hau-nav-logout{
@@ -72,7 +111,7 @@ html, body {
 .hau-product-header, .hau-product-item{
     display: grid;
     grid-template-columns: auto auto 10% 10% 10% 10% 10% 10% 10%;
-    height: 50px;
+    /* height: 80px; */
     align-items: center;
     margin-bottom: 2px;
 }
@@ -128,6 +167,7 @@ h1{
     height: 80%;
     overflow-y: scroll;
     margin: 0 10px;
+    box-shadow: 0 3px 8px 0 rgba(0,0,0);
 }
 
 .hau-content-page{

@@ -11,6 +11,7 @@ export const adminProductView = {
         return `
             <div>
                 <h1>${content}</h1>
+                <button id="addbtn" >Them</button>
             </div>
         `
     },
@@ -33,10 +34,10 @@ export const adminProductView = {
         return `
             <div class="hau-product-item hau-table-item" id="hau-product-item">
                 <label>${productData.name}</label>
-                <img src="${productData.imgs}"/>
+                <img src="${productData.img}"/>
                 <label>${productData.price}</label>
-                <label>${productData.brand}</label>
                 <label>${productData.wires}</label>
+                <label>${productData.brand}</label>
                 <label>${productData.led}</label>
                 <label>${productData.color}</label>
                 <label>${productData.switches}</label>
