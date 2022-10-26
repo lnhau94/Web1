@@ -5,7 +5,7 @@ export const viewAddProduct = {
       <div class="huy-all-frame">
         <div class="huy-frame-edit-product">
           <div class="huy-frame-upload-img">
-            <img class="huy-icon-upload-img" src="./icon-upload-img.png" alt="" title="No File Upload">
+            <img class="huy-icon-upload-img" src="icon-upload-img.png" alt="" title="No File Upload">
             <div class="huy-text-no-file">No file chosen</div>
             <output class="huy-output-img"></output>
             <input class="huy-default-btn-upload" type="file" accept="image/jpeg,image/png,image/jpg" multiple="multiple" hidden>

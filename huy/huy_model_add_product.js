@@ -39,10 +39,10 @@ defaultBtn.addEventListener("change", (e) => {
       picReader.addEventListener("load", async function (event) {
         const picFile = event.target;
         let nameImg = await save(files[i]);
-        // console.log("/home/duchuy/Desktop/Img/" + nameImg);
+        console.log("/home/duchuy/Desktop/Img/" + nameImg);
         const div = document.createElement("div");
         div.classList.add("huy-active-frame-img");
-        div.innerHTML = `<img class="huy-my-upload-img" src="${picFile.result}" title="${picFile.name}" alt=""><img class="huy-icon-close-img" src="./icon-close-img.png" alt="" onclick="removeImg(this)">`;
+        div.innerHTML = `<img class="huy-my-upload-img" src="${picFile.result}" title="${picFile.name}" alt=""><img class="huy-icon-close-img" src="icon-close-img.png" alt="" onclick="removeImg(this)">`;
         output.appendChild(div);
         document.querySelector(".huy-text-no-file").classList.add("huy-text-no-file-none");
         document.querySelector(".huy-icon-upload-img").classList.add("huy-icon-upload-img-none");
