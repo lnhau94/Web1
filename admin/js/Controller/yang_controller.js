@@ -66,8 +66,9 @@ export const loginController = {
         }
         return null;
     },
-    showSignupForm() {
-        document.getElementById('root').innerHTML = view.renderRegistrationForm();
-    },
 
+    showSignupForm() {
+ 
+        document.getElementById('root').innerHTML = view.renderRegistrationForm();
+    }
 }

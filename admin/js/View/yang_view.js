@@ -24,8 +24,8 @@ export const view = {
     },
     renderRegistrationForm() {
         return `
-        <div class="container">
-        <form action="" class="yang-form">
+        <div class="container-2">
+        <form action="" class="yang-form-2">
             <h1>Đăng kí</h1>
             <div class="yang-container">
                 <div>
@@ -63,9 +63,9 @@ export const view = {
                     </div>
                 </div>
             </div>
-            <button type="submit" class="btn-submit">Đăng kí</button>
+            <button class="btn-submit">Đăng kí</button>
             <div class="signup-link">
-                <a href="../sign_in_(3)/index.html">Đăng nhập</a>
+                Đăng nhập
             </div>
         </form>
     </div>
