@@ -5,6 +5,23 @@ import { adminAccountView } from "../View/hau_account.js";
 
 export const controller = {
     model, view,
+    eventHandleChangeNavW(){
+        let nav = document.getElementById('hau-admin-nav');
+        nav.addEventListener("mouseover", ()=>{
+            document.querySelectorAll(".hau-nav-button-content").forEach(item=>{
+                item.style.display = "block"
+            })
+            document.documentElement.style.setProperty("--nav-width", "200px")
+        })
+        nav.addEventListener("mouseleave", ()=>{
+            document.querySelectorAll(".hau-nav-button-content").forEach(item=>{
+                item.style.display = "none"
+            });
+
+            document.documentElement.style.setProperty("--nav-width", "50px")
+        })
+        
+    },
     eventHandleAddproduct(){
         document.querySelector("#addbtn").addEventListener("click", () => {
             document.querySelector(".huy-container-info-pd").classList.remove("huy-container-info-pd-none");
@@ -37,6 +54,7 @@ export const controller = {
         adminProductView.showProduct(model.keyboards);
         controller.eventHandleShowProductImage();
         controller.eventHandleAddproduct();
+        
     },
     showAccountPage() {
         document.getElementById("hau-content-page").innerHTML = `
@@ -46,8 +64,7 @@ export const controller = {
         `;
         adminAccountView.showAccount(model.accounts);
     },
-    init() {
-        view.init();
+    eventHandleNav(){
         document.getElementById("productBtn").addEventListener("click", () => {
             controller.showProductPage();
             view.changeCurrentBtn(document.getElementById("productBtn"));
@@ -67,5 +84,10 @@ export const controller = {
             controller.showAccountPage();
             view.changeCurrentBtn(document.getElementById("accountBtn"));
         });
+    },
+    init() {
+        view.init();
+        controller.eventHandleNav();
+        controller.eventHandleChangeNavW();
     }
 }

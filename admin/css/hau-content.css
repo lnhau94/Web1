@@ -1,9 +1,10 @@
-#root{
-    --dark-color: #426696;
-    --darker-grey-color: #070d2c;
+:root{
+    --dark-color: rgb(22,22,22);
+    --dark-blue-color: rgb(63,73,140);
     --light-color: #65dfc9;
     --lighter-color: #fff;
     --chosen-position: 0px;
+    --nav-width: 50px;
     position: relative;
     top: 0px;
     width: 100%;
@@ -30,24 +31,47 @@ html, body {
 
 .hau-bg1{
     display: grid;
-    grid-template-columns: 200px auto;
+    grid-template-columns: var(--nav-width) auto;
     column-gap: 5px;
     /* background: linear-gradient(to right bottom, #3a7bd5, #3a6073); */
 }
 
 .hau-nav{
     height: 100vh;
+    width: var(--nav-width);
     display: block;
-    color: white;
-    background-color: #4a4b4c;
+    color: var(--dark-blue-color);
+    background-color: var(--dark-color);
     font-weight: 700;
     justify-content: center;
+    transition: all 0.1s linear;
 }
+
+
 .hau-nav-button,.hau-nav-button-holder,.hau-nav-logo,.hau-nav-logout{
     width: 100%;
-    color: white;
+    color: rgb(109,109,109);
     text-align: center
 }
+
+.hau-nav-button{
+    display: grid;
+    grid-template-columns: 50px auto;
+    justify-content: left;
+    align-items: center;
+    gap: 5px;
+    width: auto;
+}
+
+
+.hau-nav-button i{
+    margin: 2px;
+    padding: 5px;
+}
+.hau-nav-button-content{
+    display: none;
+}
+
 
 .hau-nav-logo{
     height: 20%;
@@ -84,7 +108,7 @@ html, body {
     height: 50px;
     width: 100%;
     z-index: -1;
-    border: #65dfc9 2px solid;
+    border: var(--dark-blue-color) 3px solid;
     top: var(--chosen-position);
     transition: all .5s ease 0s;
 }
@@ -106,8 +130,9 @@ html, body {
     z-index: 0;
 }
 .hau-current-btn{
-    background-color: rgb(54, 210, 212);
-    transition: 0.5s;
+    background-color: var(--dark-blue-color);
+    color: white;
+    transition: all 0.5s ease-in-out;
 }
 
 .hau-nav-logout{
@@ -210,7 +235,7 @@ h1{
 .hau-account-item *{
     word-break: break-word;
 }
-.hau-tale-item{
+.hau-table-item{
     text-transform: capitalize;
 }
 
