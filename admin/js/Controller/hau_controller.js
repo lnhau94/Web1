@@ -5,12 +5,7 @@ import { adminAccountView } from "../View/hau_account.js";
 
 export const controller = {
     model, view,
-    showProductPage() {
-        document.getElementById("hau-content-page").innerHTML = `
-            ${adminProductView.renderProductPageHeader("Product")}
-            ${adminProductView.renderProductTable()}
-        `;
-        adminProductView.showProduct(model.keyboards);
+    eventHandleAddproduct(){
         document.querySelector("#addbtn").addEventListener("click", () => {
             document.querySelector(".huy-container-info-pd").classList.remove("huy-container-info-pd-none");
             console.log(document.querySelector(".huy-all-frame").classList);
@@ -18,6 +13,31 @@ export const controller = {
             document.querySelector(".huy-container-info-pd").classList.remove("huy-container-info-pd-on");
             document.querySelector(".huy-container-info-pd").classList.add("huy-container-info-pd-on");
         });
+    },
+    eventHandleShowProductImage(){
+        document.querySelectorAll(".hau-product-image").forEach(element=>{
+            element.addEventListener("click", ()=>{
+                adminProductView.showProductImage(model.keyboards[element.parentElement.parentElement.dataset.id].img);
+                controller.eventHandelRemoveProductImage();
+            })
+        })
+    },
+    eventHandelRemoveProductImage(){
+        document.querySelectorAll(".hau-product-image-holder").forEach(element=>{
+            element.addEventListener("click",()=>{
+                element.style.zIndex = "-10";
+                element.remove();    
+            })
+        })
+    },
+    showProductPage() {
+        document.getElementById("hau-content-page").innerHTML = `
+            ${adminProductView.renderProductPageHeader("Product")}
+            ${adminProductView.renderProductTable()}
+        `;
+        adminProductView.showProduct(model.keyboards);
+        controller.eventHandleShowProductImage();
+        controller.eventHandleAddproduct();
     },
     showAccountPage() {
         document.getElementById("hau-content-page").innerHTML = `
