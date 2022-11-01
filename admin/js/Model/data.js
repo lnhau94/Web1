@@ -7,7 +7,7 @@ const keyboards = [{
     led: "LED nền RGB (Backlit, dạng SMT bottom không cấn switch) với nhiều chế độ",
     color: "Black",
     switches: "yes",
-    img: []
+    img: ['1-1.jpg','1-2.jpg','1-3.jpg']
 }, {
     id: 2,
     name: "Bàn phím cơ AKKO 3108SP Pink Akko Switch V2",
@@ -17,7 +17,7 @@ const keyboards = [{
     led: "Không hỗ trợ",
     color: "Pink",
     switches: "Akko switch v2 (Orange / Pink)",
-    img: []
+    img: ['2-1.jpg','2-2.jpg']
 }, {
     id: 3,
     name: "Bàn phím AKKO PC75B Plus Year of Tiger",
@@ -27,7 +27,7 @@ const keyboards = [{
     led: "	LED nền RGB (6028 SMD LED) với nhiều chế độ – có LED gầm",
     color: "Red",
     switches: "AKKO CS Switch (Silver / Wine Red) đều đã được lube sẵn",
-    img: []
+    img: ['3-1.jpg','3-2.jpg']
 }, {
     id: 4,
     name: "Bàn phím cơ AKKO 3098B Multi-modes Black & Cyan",
@@ -37,7 +37,7 @@ const keyboards = [{
     led: "Nền RGB (Backlit, dạng SMT bottom không cấn switch) với nhiều chế độ",
     color: "Black",
     switches: "AKKO CS Switch (Jelly Blue / Jelly Pink / Jelly Silver)",
-    img: []
+    img: ['4-1.jpg','4-2.jpg']
 }, {
     id: 5,
     name: "Bàn phím cơ AKKO 3098B Multi-modes 9009",
@@ -47,7 +47,7 @@ const keyboards = [{
     led: "	Nền RGB (Backlit, dạng SMT bottom không cấn switch) với nhiều chế độ",
     color: "White",
     switches: "AKKO CS Switch (Jelly Blue / Jelly Pink / Jelly White)",
-    img: []
+    img: ['5-1.jpg','5-2.jpg','5-3.jpg']
 }, {
     id: 6,
     name: "Bàn phím cơ AKKO 3098B Multi-modes Doll of the Princess",
@@ -57,7 +57,7 @@ const keyboards = [{
     led: "Nền RGB (Backlit, dạng SMT bottom không cấn switch) với nhiều chế độ",
     color: "Blue",
     switches: "AKKO CS Switch (Jelly Blue / Jelly Pink / Jelly White)",
-    img: []
+    img: ['6-1.jpg','6-2.jpg','6-3.jpg','6-4.jpg']
 }, {
     id: 7,
     name: "Bàn phím AKKO 3084 v2 RGB Black",
@@ -67,7 +67,7 @@ const keyboards = [{
     led: "RGB (Backlit, 4028 SMD LED dạng SMD) với nhiều chế độ",
     color: "Black",
     switches: "	Akko CS switch (Jelly Pink / Jelly Purple)",
-    img: []
+    img: ['7-1.jpg','7-2.jpg']
 }, {
     id: 8,
     name: "Bàn phím AKKO ACR Pro 68",
@@ -77,7 +77,7 @@ const keyboards = [{
     led: "RGB, hotswap 5 pin",
     color: "White",
     switches: "AKKO CS Crystal",
-    img: []
+    img: ['8-1.jpg','8-2.jpg']
 }, {
     id: 9,
     name: "Bàn phím cơ AKKO 3068B Multi-modes Prunus Lannesiana",
@@ -87,7 +87,7 @@ const keyboards = [{
     led: "Nền RGB (Backlit, dạng SMT bottom không cấn switch) với nhiều chế độ",
     color: "White",
     switches: "AKKO CS Switch (Jelly Purple / Jelly Pink)",
-    img: []
+    img: ['9-1.jpg','9-2.jpg','9-3.jpg']
 }, {
     id: 10,
     name: "Bàn phím cơ AKKO 3098S One Piece",
@@ -97,7 +97,7 @@ const keyboards = [{
     led: "Nền RGB (Backlit, dạng SMT bottom không cấn switch) với nhiều chế độ",
     color: "Brown",
     switches: "AKKO CS (Jelly White / Silver)",
-    img: []
+    img: ['10-1.jpg','10-2.jpg','10-3.jpg']
 }, {
     id: 11,
     name: "Bàn phím cơ DareU EK8100 RGB",
@@ -107,7 +107,7 @@ const keyboards = [{
     led: "RGB",
     color: "Black",
     switches: "D Switch",
-    img: []
+    img: ['11-1.jpg','11-2.jpg','11-3.jpg']
 }, {
     id: 12,
     name: "Bàn phím cơ DareU EK884 RGB",
@@ -117,7 +117,7 @@ const keyboards = [{
     led: "RGB",
     color: "Black",
     switches: "D Switch",
-    img: []
+    img: ['12-1.jpg','12-2.jpg','13-3.jpg']
 }, {
     id: 13,
     name: "Bàn phím cơ DareU EK520 Optical",
@@ -127,7 +127,7 @@ const keyboards = [{
     led: "Multi",
     color: "Black",
     switches: "Optical",
-    img: []
+    img: ['13-1.jpg','13-2.jpg','13-3.jpg','13-4.jpg']
 }, {
     id: 14,
     name: "Bàn phím Gaming DareU EK1280 RGB",
@@ -137,7 +137,7 @@ const keyboards = [{
     led: "Có led RGB",
     color: "Black",
     switches: "DareU 'D' Switch: Blue / Red / Brown",
-    img: []
+    img: ['14-1.jpg','14-2.jpg','14-3.jpg']
 }, {
     id: 15,
     name: "Bàn phím cơ DareU EK807G Wireless",
@@ -147,7 +147,7 @@ const keyboards = [{
     led: "Không có",
     color: "Black",
     switches: "Blue/ Red/ Brown",
-    img: []
+    img: ['15-1.jpg','15-2.jpg','15-3.jpg']
 }, {
     id: 16,
     name: "Bàn phím cơ DareU EK810 Queen",
@@ -157,7 +157,7 @@ const keyboards = [{
     led: "Pink (single led)",
     color: "Pink",
     switches: "D Switch",
-    img: []
+    img: ['16-1.jpg']
 }, {
     id: 17,
     name: "Bàn phím Dare-U EK880 RGB - Black",
@@ -167,7 +167,7 @@ const keyboards = [{
     led: "RGB 16.8 triệu màu",
     color: "Black",
     switches: "D Switch độc quyền",
-    img: []
+    img: ['17-1.jpg','17-2.jpg']
 }, {
     id: 18,
     name: "Bàn Phím Gaming DAREU EK1280s",
@@ -177,7 +177,7 @@ const keyboards = [{
     led: "Có led Rainbow",
     color: "Black  ",
     switches: "DareU 'D' Switch: Blue / Red / Brown",
-    img: []
+    img: ['18-1.jpg','18-2.jpg']
 }, {
     id: 19,
     name: "Bàn phím cơ Gaming DAREU EK87 - Black (Multi-LED)",
@@ -187,7 +187,7 @@ const keyboards = [{
     led: "Multi-LED",
     color: "Black",
     switches: "Blue/ Red/ Brown",
-    img: []
+    img: ['1-1.jpg','1-2.jpg','1-3.jpg']
 }, {
     id: 20,
     name: "Bàn phím Gaming DareU LK145 USB",
@@ -197,7 +197,7 @@ const keyboards = [{
     led: "Led Rainbow 7 màu 5 hiệu ứng led",
     color: "Black",
     switches: "Membrane cao su giả cơ",
-    img: []
+    img: ['1-1.jpg','1-2.jpg','1-3.jpg']
 }, {
     id: 21,
     name: "Bàn phím cơ IQUNIX ZX-75 Gravity Wave Wireless RGB",
@@ -207,7 +207,7 @@ const keyboards = [{
     led: "Không có",
     color: "White",
     switches: "Cherry (Red / Brown)",
-    img: []
+    img: ['1-1.jpg','1-2.jpg','1-3.jpg']
 }, {
     id: 22,
     name: "Bàn phím cơ IQUNIX F60 Jungle Mystery RGB",
@@ -217,7 +217,7 @@ const keyboards = [{
     led: "Không có",
     color: "Green",
     switches: "Cherry Red",
-    img: []
+    img: ['1-1.jpg','1-2.jpg','1-3.jpg']
 }, {
     id: 23,
     name: "Bàn phím cơ IQUNIX F60 Joker RGB",
@@ -227,7 +227,7 @@ const keyboards = [{
     led: "RGB",
     color: "Purple",
     switches: "Cherry Red",
-    img: []
+    img: ['1-1.jpg','1-2.jpg','1-3.jpg']
 }, {
     id: 24,
     name: "Bàn phím cơ IQUNIX F60 Strawberry RGB",
@@ -237,7 +237,8 @@ const keyboards = [{
     led: "RGB",
     color: "Red",
     switches: "Cherry Red",
-    img: []
+    
+    img: ['1-1.jpg','1-2.jpg','1-3.jpg']
 }, {
     id: 25,
     name: "Bàn phím cơ IQUNIX F60 Coral Sea RGB",
@@ -247,7 +248,8 @@ const keyboards = [{
     led: "RGB 16.8 triệu màu",
     color: "Blue",
     switches: "Cherry Red",
-    img: []
+    
+    img: ['1-1.jpg','1-2.jpg','1-3.jpg']
 }, {
     id: 26,
     name: "Bàn phím cơ IQUNIX M80 Tabby Wireless",
@@ -257,7 +259,8 @@ const keyboards = [{
     led: "Không có",
     color: "Yellow / Pink / Blue",
     switches: "Kailh Blue",
-    img: []
+    
+    img: ['1-1.jpg','1-2.jpg','1-3.jpg']
 }, {
     id: 27,
     name: "Bàn phím cơ IQUNIX M80 Persian Wireless",
@@ -267,7 +270,8 @@ const keyboards = [{
     led: "Không có",
     color: "Yellow / Pink / Blue",
     switches: "Kailh Blue",
-    img: []
+    
+    img: ['1-1.jpg','1-2.jpg','1-3.jpg']
 }, {
     id: 28,
     name: "Bàn phím cơ IQUNIX L80 Cosmic Traveller Wireless RGB",
@@ -277,7 +281,8 @@ const keyboards = [{
     led: "Không có",
     color: "White",
     switches: "Cherry (Brown / Red / Blue)",
-    img: []
+    
+    img: ['1-1.jpg','1-2.jpg','1-3.jpg']
 }, {
     id: 29,
     name: "Bàn phím cơ IQUNIX L80 Formula Typing Wireless RGB",
@@ -287,7 +292,8 @@ const keyboards = [{
     led: "Không có",
     color: "White",
     switches: "Cherry (Brown / Red)",
-    img: []
+    
+    img: ['1-1.jpg','1-2.jpg','1-3.jpg']
 }, {
     id: 30,
     name: "Bàn phím cơ IQUNIX F97 Variable X Wireless RGB",
@@ -297,7 +303,8 @@ const keyboards = [{
     led: "RGB Backlit",
     color: "Gray",
     switches: "Cherry Brown",
-    img: []
+    
+    img: ['1-1.jpg','1-2.jpg','1-3.jpg']
 }, {
     id: 31,
     name: "Bàn phím cơ Leopold FC900R PD White Blue Star",
@@ -307,7 +314,8 @@ const keyboards = [{
     led: "Không có",
     color: "Red",
     switches: "Cherry MX Brown / Blue / Red / Silent Red",
-    img: []
+    
+    img: ['1-1.jpg','1-2.jpg','1-3.jpg']
 }, {
     id: 32,
     name: "Bàn Phím Leopold FC900RPD Bluetooth Blackcase Brown Switch",
@@ -317,7 +325,8 @@ const keyboards = [{
     led: "Không",
     color: "Black",
     switches: "Cherry Brown",
-    img: []
+    
+    img: ['1-1.jpg','1-2.jpg','1-3.jpg']
 }, {
     id: 33,
     name: "Bàn phím Leopold FC750RPD Blackcase",
@@ -327,7 +336,8 @@ const keyboards = [{
     led: "Không",
     color: "Black",
     switches: "Cherry MX Blue/Red/Brown",
-    img: []
+    
+    img: ['1-1.jpg','1-2.jpg','1-3.jpg']
 }, {
     id: 34,
     name: "Bàn phím Leopold FC900RPD Sweden White Case",
@@ -337,7 +347,8 @@ const keyboards = [{
     led: "Không",
     color: "White",
     switches: "Cherry MX Blue/ Brown/ Red/ Silent Red",
-    img: []
+    
+    img: ['1-1.jpg','1-2.jpg','1-3.jpg']
 }, {
     id: 35,
     name: "Bàn phím Leopold FC900R Bluetooth Ash Yellow",
@@ -347,7 +358,8 @@ const keyboards = [{
     led: "Không",
     color: "Black",
     switches: "Cherry Brown / Red / Black / Blue",
-    img: []
+    
+    img: ['1-1.jpg','1-2.jpg','1-3.jpg']
 }, {
     id: 36,
     name: "Bàn phím Leopold FC750R Bluetooth Ash Yellow",
@@ -357,7 +369,8 @@ const keyboards = [{
     led: "Không",
     color: "Black",
     switches: "Cherry MX Red/ Blue/ Black/ Silent Red",
-    img: []
+    
+    img: ['1-1.jpg','1-2.jpg','1-3.jpg']
 }, {
     id: 37,
     name: "Bàn phím cơ Leopold FC980M PD White Blue Star",
@@ -367,7 +380,8 @@ const keyboards = [{
     led: "Không",
     color: "Đỏ",
     switches: ["Cherry MX Blue/ Brown/ Red/ Silent Red"],
-    img: []
+    
+    img: ['1-1.jpg','1-2.jpg','1-3.jpg']
 }, {
     id: 38,
     name: "Bàn phím Leopold FC660R Bluetooth Sweden White Case",
@@ -377,7 +391,8 @@ const keyboards = [{
     led: "Không",
     color: "White",
     switches: "Cherry Brown / Red / Black / Blue",
-    img: []
+    
+    img: ['1-1.jpg','1-2.jpg','1-3.jpg']
 }, {
     id: 39,
     name: "Bàn phím Leopold FC900RPD Bluetooth White Dark Grey",
@@ -387,7 +402,8 @@ const keyboards = [{
     led: "Không",
     color: "Grey",
     switches: "Cherry Brown",
-    img: []
+    
+    img: ['1-1.jpg','1-2.jpg','1-3.jpg']
 }, {
     id: 40,
     name: "Bàn phím Leopold FC660MPD Light Pink",
@@ -397,7 +413,8 @@ const keyboards = [{
     led: "Không",
     color: "White",
     switches: "Cherry Switch MX Red",
-    img: []
+    
+    img: ['1-1.jpg','1-2.jpg','1-3.jpg']
 }, {
     id: 41,
     name: "Bàn phím Logitech Mechanical Gaming G413 TKL SE",
@@ -407,7 +424,8 @@ const keyboards = [{
     led: "Có nền trắng trên mỗi phím",
     color: "Black",
     switches: "Tactile",
-    img: []
+    
+    img: ['1-1.jpg','1-2.jpg','1-3.jpg']
 }, {
     id: 42,
     name: "Bàn phím Logitech G Pro X",
@@ -417,7 +435,8 @@ const keyboards = [{
     led: "RGB hỗ trợ điều chỉnh qua phần mềm Logitech G Hub",
     color: "Black",
     switches: "Logitech GX Switch Clicky",
-    img: []
+    
+    img: ['1-1.jpg','1-2.jpg','1-3.jpg']
 }, {
     id: 43,
     name: "Bàn phím Logitech G PRO KDA",
@@ -427,7 +446,8 @@ const keyboards = [{
     led: "RGB",
     color: "Black",
     switches: "GX Switch tactile brown",
-    img: []
+    
+    img: ['1-1.jpg','1-2.jpg','1-3.jpg']
 }, {
     id: 44,
     name: "Bàn phím Logitech G Pro League Of Legends",
@@ -437,7 +457,8 @@ const keyboards = [{
     led: "RGB",
     color: "Blue",
     switches: "GX Switch Tactile",
-    img: []
+    
+    img: ['1-1.jpg','1-2.jpg','1-3.jpg']
 }, {
     id: 45,
     name: "Bàn phím Logitech G913 TKL Lightspeed Wireless",
@@ -447,7 +468,8 @@ const keyboards = [{
     led: "Lightsync RGB",
     color: "Black",
     switches: "CLICKY / TACTILE / LINEAR",
-    img: []
+    
+    img: ['1-1.jpg','1-2.jpg','1-3.jpg']
 }, {
     id: 46,
     name: "Bàn phím Logitech G613 Wireless",
@@ -457,7 +479,8 @@ const keyboards = [{
     led: "Không",
     color: "Black",
     switches: "ROMER-G",
-    img: []
+    
+    img: ['1-1.jpg','1-2.jpg','1-3.jpg']
 }, {
     id: 47,
     name: "Bàn phím Logitech G213",
@@ -467,7 +490,8 @@ const keyboards = [{
     led: "RGB (5 khu vực)",
     color: "Black",
     switches: "MECH DOME key ",
-    img: []
+    
+    img: ['1-1.jpg','1-2.jpg','1-3.jpg']
 }, {
     id: 48,
     name: "Bàn phím không dây Logitech MX Keys Mini - Graphite",
@@ -477,7 +501,8 @@ const keyboards = [{
     led: "Không",
     color: "Black",
     switches: "Không",
-    img: []
+    
+    img: ['1-1.jpg','1-2.jpg','1-3.jpg']
 }, {
     id: 49,
     name: "Bàn phím không dây Logitech MX Keys Mini - Rose",
@@ -487,7 +512,8 @@ const keyboards = [{
     led: "Không",
     color: "Pink",
     switches: "Không",
-    img: []
+    
+    img: ['1-1.jpg','1-2.jpg','1-3.jpg']
 }, {
     id: 50,
     name: "Bàn phím không dây Logitech MX Keys",
@@ -497,113 +523,114 @@ const keyboards = [{
     led: "Không",
     color: "Black",
     switches: "Không",
-    img: []
+    
+    img: ['1-1.jpg','1-2.jpg','1-3.jpg']
 }]
 
-export {keyboards}
+export { keyboards }
 export const accounts = [{
     username: "lnhau",
     password: "1234",
-    owner : "hau",
+    owner: "hau",
     address: "quan 7 tp hcm",
     phone: "0965026920",
-    email:"lnhau94@gmail.com",
-},{
+    email: "lnhau94@gmail.com",
+}, {
     username: "lnhau",
     password: "1234",
-    owner : "hau",
+    owner: "hau",
     address: "quan 7 tp hcm",
     phone: "0965026920",
-    email:"lnhau94@gmail.com",
-},{
+    email: "lnhau94@gmail.com",
+}, {
     username: "lnhau",
     password: "1234",
-    owner : "hau",
+    owner: "hau",
     address: "quan 7 tp hcm",
     phone: "0965026920",
-    email:"lnhau94@gmail.com",
-},{
+    email: "lnhau94@gmail.com",
+}, {
     username: "lnhau",
     password: "1234",
-    owner : "hau",
+    owner: "hau",
     address: "quan 7 tp hcm",
     phone: "0965026920",
-    email:"lnhau94@gmail.com",
-},{
+    email: "lnhau94@gmail.com",
+}, {
     username: "lnhau",
     password: "1234",
-    owner : "hau",
+    owner: "hau",
     address: "quan 7 tp hcm",
     phone: "0965026920",
-    email:"lnhau94@gmail.com",
-},{
+    email: "lnhau94@gmail.com",
+}, {
     username: "lnhau",
     password: "1234",
-    owner : "hau",
+    owner: "hau",
     address: "quan 7 tp hcm",
     phone: "0965026920",
-    email:"lnhau94@gmail.com",
-},{
+    email: "lnhau94@gmail.com",
+}, {
     username: "lnhau",
     password: "1234",
-    owner : "hau",
+    owner: "hau",
     address: "quan 7 tp hcm",
     phone: "0965026920",
-    email:"lnhau94@gmail.com",
-},{
+    email: "lnhau94@gmail.com",
+}, {
     username: "lnhau",
     password: "1234",
-    owner : "hau",
+    owner: "hau",
     address: "quan 7 tp hcm",
     phone: "0965026920",
-    email:"lnhau94@gmail.com",
-},{
+    email: "lnhau94@gmail.com",
+}, {
     username: "lnhau",
     password: "1234",
-    owner : "hau",
+    owner: "hau",
     address: "quan 7 tp hcm",
     phone: "0965026920",
-    email:"lnhau94@gmail.com",
-},{
+    email: "lnhau94@gmail.com",
+}, {
     username: "lnhau",
     password: "1234",
-    owner : "hau",
+    owner: "hau",
     address: "quan 7 tp hcm",
     phone: "0965026920",
-    email:"lnhau94@gmail.com",
-},{
+    email: "lnhau94@gmail.com",
+}, {
     username: "lnhau",
     password: "1234",
-    owner : "hau",
+    owner: "hau",
     address: "quan 7 tp hcm",
     phone: "0965026920",
-    email:"lnhau94@gmail.com",
-},{
+    email: "lnhau94@gmail.com",
+}, {
     username: "lnhau",
     password: "1234",
-    owner : "hau",
+    owner: "hau",
     address: "quan 7 tp hcm",
     phone: "0965026920",
-    email:"lnhau94@gmail.com",
-},{
+    email: "lnhau94@gmail.com",
+}, {
     username: "lnhau",
     password: "1234",
-    owner : "hau",
+    owner: "hau",
     address: "quan 7 tp hcm",
     phone: "0965026920",
-    email:"lnhau94@gmail.com",
-},{
+    email: "lnhau94@gmail.com",
+}, {
     username: "lnhau",
     password: "1234",
-    owner : "hau",
+    owner: "hau",
     address: "quan 7 tp hcm",
     phone: "0965026920",
-    email:"lnhau94@gmail.com",
-},{
+    email: "lnhau94@gmail.com",
+}, {
     username: "lnhau",
     password: "1234",
-    owner : "hau",
+    owner: "hau",
     address: "quan 7 tp hcm",
     phone: "0965026920",
-    email:"lnhau94@gmail.com",
+    email: "lnhau94@gmail.com",
 }]

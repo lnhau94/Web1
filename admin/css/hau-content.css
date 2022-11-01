@@ -108,14 +108,57 @@ html, body {
     height: 20%;
 }
 
-.hau-product-header, .hau-product-item{
+/* .hau-product-header, .hau-product-item{
     display: grid;
     grid-template-columns: auto auto 10% 10% 10% 10% 10% 10% 10%;
-    /* height: 80px; */
+    height: 80px;
+    align-items: center;
+    margin-bottom: 2px;
+} */
+
+.hau-product-teaser, .hau-product-header{
+    display: grid;
+    grid-template-columns:  auto 20% 10% 10% 10% ;
+    height: 80px;
     align-items: center;
     margin-bottom: 2px;
 }
 
+.hau-product-teaser{
+    transition: all 0.5s linear;
+}
+.hau-product-detail{
+    height: 0px;
+    opacity: 0;
+    transition: all 0.5s linear;
+}
+.hau-product-teaser:hover~.hau-product-detail{
+    display: grid;
+    grid-template-columns: auto 20% 20% 20%;
+    align-items: top;
+    padding-top: 5px;
+    margin-left: 0px;
+    background-color: #6f7172;
+    height: 150px;
+    opacity: 0.8;
+    color: white;
+}
+
+.hau-product-teaser:hover{
+    height: 85px;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    background-color: #6f7172;
+    color: white;
+    z-index: 1;
+    box-shadow: 0 3px 8px 0 rgba(0,0,0);
+}
+
+.hau-product-teaser img{
+    cursor: pointer;
+}
 
 h1{
     text-align: center;
