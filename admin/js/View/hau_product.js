@@ -34,11 +34,11 @@ export const adminProductView = {
     },
     renderProductItem(productData){
         return `
-            <div class="hau-product-item hau-table-item" id="hau-product-item">
+            <div class="hau-product-item hau-table-item" id="hau-product-item" data-id="${productData.id}">
 
                 <div class="hau-product-teaser">
                     <label>${productData.name}</label>
-                    <img id="hau-product-teaser-img-${productData.id}" src="/imgs/DataKeyboard/${productData.img[0]}"/>
+                    <img class="hau-product-image" src="/imgs/DataKeyboard/${productData.img[0]}" alt="${productData.name}"/>
                     <label>${productData.price}</label>
                     <label>${productData.brand}</label>
                     <div><button>Del</button></div>
@@ -57,11 +57,11 @@ export const adminProductView = {
     showProductImage(imageList){
         let text = ''
         imageList.forEach((item)=>{
-            text += `<img src="${item}>`
+            text += `<img class="hau-product-image-item" src="/imgs/DataKeyboard/${item}">`
         })
-        document.getElementById('root').innerHTML +=
+        document.getElementById('section').innerHTML +=
         `
-            <div class="hau-product-image-holder">
+            <div class="hau-product-image-holder" id="c1">
                 ${text}
             </div>
         `
@@ -69,11 +69,6 @@ export const adminProductView = {
     showProduct(productList){
         productList.forEach(product => {
             document.getElementById("hau-product-table").innerHTML += adminProductView.renderProductItem(product);
-            let image = document.getElementById(`hau-product-teaser-img-${product.id}`)
-            document.querySelector(`#hau-product-teaser-img-${product.id}`).addEventListener("change",() => {
-                console.log(image); 
-                showProductImage(product.img)
-            })
         });
     }
 }

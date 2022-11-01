@@ -13,6 +13,7 @@ div {
   width: 100%;
 }
 .huy-container-info-pd.huy-container-info-pd-on {
+  z-index: 3;
   display: block;
 }
 .huy-container-qty-pd {
@@ -21,6 +22,7 @@ div {
   width: 100%;
 }
 .huy-container-info-pd.huy-container-info-pd-none {
+  z-index: -3;
   display: none;
 }
 .huy-container-qty-pd.huy-container-qty-pd-active {
