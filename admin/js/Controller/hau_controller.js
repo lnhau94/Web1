@@ -17,7 +17,7 @@ export const controller = {
     eventHandleShowProductImage(){
         document.querySelectorAll(".hau-product-image").forEach(element=>{
             element.addEventListener("click", ()=>{
-                adminProductView.showProductImage(model.keyboards[element.parentElement.parentElement.dataset.id].img);
+                adminProductView.showProductImage(model.keyboards[element.parentElement.parentElement.dataset.id-1].img);
                 controller.eventHandelRemoveProductImage();
             })
         })
@@ -25,7 +25,6 @@ export const controller = {
     eventHandelRemoveProductImage(){
         document.querySelectorAll(".hau-product-image-holder").forEach(element=>{
             element.addEventListener("click",()=>{
-                element.style.zIndex = "-10";
                 element.remove();    
             })
         })
