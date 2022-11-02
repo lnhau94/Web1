@@ -7,8 +7,10 @@ div {
 }
 .huy-container-info-pd {
   display: none;
-  /* z-index: 10;
-  background-color: blueviolet; */
+  position: absolute;
+  top: 0px;
+  z-index: 15;
+  background-image: linear-gradient(#f7a79c, #f6e5d5, #a5cec8);
   height: 100%;
   width: 100%;
 }

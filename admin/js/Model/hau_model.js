@@ -24,10 +24,6 @@ const model = {
 
 
 
-
-
-
-
 export {
     model
 }
