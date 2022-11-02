@@ -307,15 +307,15 @@ h1 {
 .hau-table-item:nth-child(2n+1) {
     background-color: #e1dede;
     border-bottom: #070d2c 1px solid;
-    animation-name: hau-animation-from-left;
-    animation-duration: 1s;
+    /* animation-name: hau-animation-from-left;
+    animation-duration: 1s; */
 }
 
 .hau-table-item:nth-child(2n) {
     border-bottom: #070d2c 1px solid;
     background: whitesmoke;
-    animation-name: hau-animation-from-right;
-    animation-duration: 1s;
+    /* animation-name: hau-animation-from-right;
+    animation-duration: 1s; */
 }
 
 .hau-account-item:hover {
