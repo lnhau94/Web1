@@ -369,6 +369,7 @@ function btnAcceptActive() {
       localStorage.setItem("keyboards",JSON.stringify(listProduct));
       console.log(listProduct);
       allFrame.classList.add("huy-close-all-frame");
+      document.querySelector(".huy-container-info-pd").classList.remove("huy-container-info-pd-on");
     }
   }
 }
