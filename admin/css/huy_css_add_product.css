@@ -8,17 +8,21 @@ div {
 .huy-container-info-pd {
   display: none;
   position: absolute;
-  top: 0px;
+  top: 0;
   z-index: 15;
   background-image: linear-gradient(#f7a79c, #f6e5d5, #a5cec8);
   height: 100%;
   width: 100%;
 }
 .huy-container-info-pd.huy-container-info-pd-on {
-  display: block;
+  display: flex;
 }
 .huy-container-qty-pd {
   display: none;
+  position: absolute;
+  top: 0;
+  z-index: 15;
+  background-image: linear-gradient(#f7a79c, #f6e5d5, #a5cec8);
   height: 100%;
   width: 100%;
 }
@@ -26,11 +30,11 @@ div {
   display: none;
 }
 .huy-container-qty-pd.huy-container-qty-pd-active {
-  display: block;
+  display: flex;
 }
 .huy-all-frame {
   position: relative;
-  display: block;
+  display: flex;
   width: 100%;
   height: 100%;
 }
@@ -84,6 +88,7 @@ div {
 }
 .huy-frame-upload-img {
   position: relative;
+  display: flex;
   left: 2%;
   top: 2%;
   border-radius: 12px;
@@ -184,11 +189,15 @@ div {
   right: 40%;
 }
 .huy-switch-checkbox {
+  display: flex;
   position: absolute;
   left: 49%;
   top: 25%;
   right: 1%;
   border: 1px solid grey;
+}
+.huy-switch-checkbox label {
+  overflow-x: hidden;
 }
 .huy-text-connect-pd {
   position: absolute;
