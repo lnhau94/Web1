@@ -5,6 +5,7 @@ import { adminAccountView } from "../View/hau_account.js";
 
 export const controller = {
     model, view,
+    
     eventHandleChangeNavW(){
         let nav = document.getElementById('hau-admin-nav');
         nav.addEventListener("mouseover", ()=>{
