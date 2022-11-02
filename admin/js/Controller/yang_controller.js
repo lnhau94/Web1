@@ -13,6 +13,7 @@ export const loginController = {
         signinBtn.addEventListener('click', (e) => { 
             loginController.showSignupForm();
         })
+        
         submitLog.addEventListener('click', e => {
             e.preventDefault()
             let isEmptyError = this.checkEmptyError([username, password])
@@ -66,9 +67,7 @@ export const loginController = {
         }
         return null;
     },
-
     showSignupForm() {
- 
         document.getElementById('root').innerHTML = view.renderRegistrationForm();
     }
 }
