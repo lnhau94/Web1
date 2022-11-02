@@ -366,7 +366,7 @@ function btnAcceptActive() {
         quantity: listQtyPd,
         images: listImg,
       });
-      localStorage.setItem("products",JSON.stringify(listProduct));
+      localStorage.setItem("keyboards",JSON.stringify(listProduct));
       console.log(listProduct);
       allFrame.classList.add("huy-close-all-frame");
     }
