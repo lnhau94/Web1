@@ -1,21 +1,26 @@
-:root{
-    --dark-color: rgb(22,22,22);
-    --dark-blue-color: rgb(63,73,140);
+:root {
+    --dark-color: rgb(22, 22, 22);
+    --dark-blue-color: rgb(63, 73, 140);
+    --dark-blue-color-tran: rgba(63, 73, 140,0.5);
     --light-color: #65dfc9;
     --lighter-color: #fff;
     --chosen-position: 0px;
     --nav-width: 50px;
+}
+
+#root {
     position: relative;
     top: 0px;
     width: 100%;
 }
 
-#section{
+#section {
     position: absolute;
     top: 0;
 }
 
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
     width: 100vw;
@@ -24,78 +29,88 @@ html, body {
     position: relative;
 }
 
-*{
+* {
     box-sizing: border-box;
 }
 
 
-.hau-bg1{
+.hau-bg1 {
     display: grid;
     grid-template-columns: var(--nav-width) auto;
     column-gap: 5px;
     /* background: linear-gradient(to right bottom, #3a7bd5, #3a6073); */
 }
 
-.hau-nav{
+.hau-nav {
     height: 100vh;
     width: var(--nav-width);
     display: block;
     color: var(--dark-blue-color);
     background-color: var(--dark-color);
-    font-weight: 700;
+    font-weight: 600;
     justify-content: center;
     transition: all 0.1s linear;
 }
 
 
-.hau-nav-button,.hau-nav-button-holder,.hau-nav-logo,.hau-nav-logout{
+.hau-nav-button,
+.hau-nav-button-holder,
+.hau-nav-logo,
+.hau-nav-logout {
     width: 100%;
-    color: rgb(109,109,109);
+    color: rgb(109, 109, 109);
     text-align: center
 }
 
-.hau-nav-button{
+.hau-nav-button {
     display: grid;
     grid-template-columns: 50px auto;
     justify-content: left;
     align-items: center;
     gap: 5px;
     width: auto;
+    transition: all 0.5s ease-in;
 }
 
 
-.hau-nav-button i{
+.hau-nav-button i {
     margin: 2px;
     padding: 5px;
 }
-.hau-nav-button-content{
+
+.hau-nav-button-content {
     display: none;
 }
 
 
-.hau-nav-logo{
+.hau-nav-logo {
     height: 20%;
 }
 
-.hau-nav-logo img{
+.hau-nav-logo img {
     width: 90%;
 }
 
-.hau-nav-button-holder{
+.hau-nav-button-holder {
     position: relative;
     height: 60%;
 }
+
 /* .hau-nav-button:hover, */
-.hau-nav-logout:hover{
+.hau-nav-logout:hover {
     background-color: whitesmoke;
     color: #FF8787;
     cursor: pointer;
 }
-.hau-nav-button:hover{
+
+.hau-nav-button:hover {
     cursor: pointer;
+    color: white;
+    font-weight: 700;
 }
 
-.hau-nav-button, .hau-nav-logout{
+.hau-nav-button,
+.hau-nav-logout {
     height: 50px;
     line-height: 50px;
     font-size: 20px;
@@ -103,7 +118,7 @@ html, body {
     position: relative;
 }
 
-.hau-nav-button-animation{
+.hau-nav-button-animation {
     position: absolute;
     height: 50px;
     width: 100%;
@@ -113,29 +128,34 @@ html, body {
     transition: all .5s ease 0s;
 }
 
-#dashboardBtn:hover~.hau-nav-button-animation{
+#dashboardBtn:hover~.hau-nav-button-animation {
     --chosen-position: 0px;
     z-index: 0;
 }
-#productBtn:hover~.hau-nav-button-animation{
+
+#productBtn:hover~.hau-nav-button-animation {
     --chosen-position: 50px;
     z-index: 0;
 }
-#orderBtn:hover~.hau-nav-button-animation{
+
+#orderBtn:hover~.hau-nav-button-animation {
     --chosen-position: 100px;
     z-index: 0;
 }
-#accountBtn:hover~.hau-nav-button-animation{
+
+#accountBtn:hover~.hau-nav-button-animation {
     --chosen-position: 150px;
     z-index: 0;
 }
-.hau-current-btn{
+
+.hau-current-btn {
     background-color: var(--dark-blue-color);
+    font-weight: 700;
     color: white;
     transition: all 0.5s ease-in-out;
 }
 
-.hau-nav-logout{
+.hau-nav-logout {
     height: 20%;
 }
 
@@ -147,48 +167,56 @@ html, body {
     margin-bottom: 2px;
 } */
 
-.hau-product-teaser, .hau-product-header{
+.hau-product-teaser,
+.hau-product-header {
     display: grid;
-    grid-template-columns:  auto 20% 10% 10% 10% ;
+    grid-template-columns: auto 20% 10% 10% 10%;
     height: 80px;
     align-items: center;
     margin-bottom: 2px;
 }
 
-.hau-product-teaser{
+.hau-product-teaser {
     transition: all 0.5s linear;
 }
-.hau-product-detail{
+
+.hau-product-detail {
     height: 0px;
     opacity: 0;
     transition: all 0.5s linear;
 }
-.hau-product-teaser:hover~.hau-product-detail{
+
+.hau-product-teaser:hover~.hau-product-detail {
     display: grid;
     grid-template-columns: auto 20% 20% 20%;
     align-items: top;
     padding-top: 5px;
     margin-left: 0px;
-    background-color: #6f7172;
+    background-color: var(--dark-blue-color);
+    opacity: 0.8;
     height: 150px;
     opacity: 0.8;
     color: white;
 }
 
-.hau-product-teaser:hover{
+.hau-product-teaser:hover {
     height: 85px;
     font-size: 20px;
     font-weight: 500;
     margin-bottom: 0px;
     margin-left: 0px;
-    background-color: #6f7172;
+    background-color: var(--dark-blue-color);
     color: white;
     z-index: 1;
-    box-shadow: 0 3px 8px 0 rgba(0,0,0);
+    box-shadow: 0 3px 8px 0 rgba(0, 0, 0);
 }
 
-.hau-product-image-holder{
-    background-color: rgba(255,255,255,0.5);
+.hau-product-image:hover{
+    cursor: pointer;
+}
+
+.hau-product-image-holder {
+    background-color: var(--dark-blue-color-tran);
     z-index: 10;
     width: 100vw;
     height: 100vh;
@@ -198,23 +226,31 @@ html, body {
     align-items: center;
     overflow-x: scroll;
 }
-.hau-product-image-item{
-    height: 50%;
+
+.hau-product-image-item {
+    height: 40%;
+    transition: all 0.5s ease;
+}
+.hau-product-image-item:hover {
+    height: 60%;
 }
 
-h1{
+h1 {
     text-align: center;
     color: #FF8787;
     font-weight: 700;
 }
-.hau-table-header *, .hau-table-item *{
+
+.hau-table-header *,
+.hau-table-item * {
     margin-left: 5px;
 }
 
-.hau-table-item img{
+.hau-table-item img {
     height: 50px;
 }
-.hau-table-header{
+
+.hau-table-header {
     position: sticky;
     text-transform: uppercase;
     top: 0%;
@@ -225,37 +261,84 @@ h1{
     background-color: #4a4b4c;
 }
 
-.hau-account-header, .hau-account-item{
+.hau-account-header,
+.hau-account-item {
     display: grid;
-    grid-template-columns: auto auto 15% 20% 15% 15% 10% ;
+    grid-template-columns: auto auto 15% 20% 15% 15% 10%;
     height: 50px;
     align-items: center;
     margin-bottom: 2px;
+    transition: all 0.5s ease;
 }
-.hau-account-item *{
+
+
+.hau-account-item * {
     word-break: break-word;
 }
-.hau-table-item{
+
+.hau-table-item {
     text-transform: capitalize;
 }
 
-.hau-table-item:nth-child(2n+1){
-    background-color: #e1dede;
-    border-bottom: #070d2c 1px solid;
+@keyframes hau-animation-from-left {
+    0% {
+        left: -300px;
+        top: -100px;
+        background-color: var(--dark-blue-color);
+    }
+    100% {
+        left: 0px;
+        top: 0px;
+    }
 }
-.hau-table-item:nth-child(2n){
-    border-bottom: #070d2c 1px solid;
-    background: whitesmoke;
+@keyframes hau-animation-from-right {
+    0% {
+        left: 300px;
+        bottom: -100px;
+        background-color: var(--dark-blue-color);
+    }
+
+    100% {
+        left: 0px;
+        bottom: 0px;
+    }
 }
 
-.hau-table{
+.hau-table-item:nth-child(2n+1) {
+    background-color: #e1dede;
+    border-bottom: #070d2c 1px solid;
+    animation-name: hau-animation-from-left;
+    animation-duration: 1s;
+}
+
+.hau-table-item:nth-child(2n) {
+    border-bottom: #070d2c 1px solid;
+    background: whitesmoke;
+    animation-name: hau-animation-from-right;
+    animation-duration: 1s;
+}
+
+.hau-account-item:hover {
+    height: 70px;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    background-color: var(--dark-blue-color);
+    /* background: linear-gradient(to top, #070d2c, #4a4b4c); */
+    color: white;
+    z-index: 1;
+    box-shadow: 0 5px 8px 0 rgba(0,0,0);
+}
+
+.hau-table {
     height: 80%;
     overflow-y: scroll;
     margin: 0 10px;
-    box-shadow: 0 3px 8px 0 rgba(0,0,0);
+    box-shadow: 0 3px 8px 0 rgba(0, 0, 0);
 }
 
-.hau-content-page{
+.hau-content-page {
     height: 100vh;
     overflow-y: hidden;
 }
