@@ -322,7 +322,7 @@ function btnCancelActive() {
 }
 function btnAcceptActive() {
   let checkName = false;
-  let listProduct = localStorage.getItem("products")?JSON.parse(localStorage.getItem("products")):[];
+  let listProduct = localStorage.getItem("keyboards")?JSON.parse(localStorage.getItem("keyboards")):[];
   if (listProduct.length != 0) {
     for (let i = 0; i < listProduct.length; i++) {
       if (inputNamePd.value === listProduct[i]["name"]) {
