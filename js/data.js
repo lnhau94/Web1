@@ -500,4 +500,16 @@ const keyboards = [{
     img: []
 }]
 
+const order = [{
+    id: 1,
+    customer: '',
+    totalPrice: 0,
+    date: "",
+    orderDetails: [{
+        productId: 1,
+        switch: "",
+        qty: 1
+    }]
+}]
+
 localStorage.setItem('keyboards', JSON.stringify(keyboards));
