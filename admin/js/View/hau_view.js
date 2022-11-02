@@ -11,13 +11,28 @@ export const view = {
                     <img src="../../../imgs/logo-keyboard-center.png">
                 </div>
                 <div class="hau-nav-button-holder">
-                    <div class="hau-nav-button" id="dashboardBtn">Dashboard</div>
-                    <div class="hau-nav-button" id="productBtn">Product</div>
-                    <div class="hau-nav-button" id="orderBtn">Order</div>
-                    <div class="hau-nav-button" id="accountBtn">Account</div>
+                    <div class="hau-nav-button" id="dashboardBtn">
+                        <i class="fa-solid fa-bars"></i>
+                        <div class="hau-nav-button-content"">Dashboard</div>
+                    </div>
+                    <div class="hau-nav-button" id="productBtn">
+                        <i class="fa-solid fa-keyboard"></i>
+                        <div class="hau-nav-button-content">Product</div>
+                    </div>
+                    <div class="hau-nav-button" id="orderBtn">
+                        <i class="fa-solid fa-list"></i>
+                        <div class="hau-nav-button-content">Order</div>
+                    </div>
+                    <div class="hau-nav-button" id="accountBtn">
+                        <i class="fa-solid fa-user"></i>
+                        <div class="hau-nav-button-content">Account</div>
+                    </div>
                     <div class="hau-nav-button-animation"></div>
                 </div>
-                <div class="hau-nav-logout" id="logout">Logout</div>
+                <div class="hau-nav-button" id="logout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <div class="hau-nav-button-content">Logout</div>
+                </div>
             </div>
         `
     },

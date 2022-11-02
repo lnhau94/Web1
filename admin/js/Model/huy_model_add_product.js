@@ -317,6 +317,7 @@ function addBrand() {
 }
 function btnCancelActive() {
   allFrame.classList.add("huy-close-all-frame");
+  document.querySelector(".huy-container-info-pd").classList.remove("huy-container-info-pd-on");
   //localStorage.clear();
 }
 function btnAcceptActive() {
