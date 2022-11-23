@@ -2,6 +2,7 @@ import { model } from "../Model/hau_model.js";
 import { view } from "../View/hau_view.js";
 import { adminProductView } from "../View/hau_product.js";
 import { adminAccountView } from "../View/hau_account.js";
+import { adminOrderView } from  "../View/hau_order.js";
 
 export const controller = {
     model, view,
@@ -65,6 +66,23 @@ export const controller = {
         `;
         adminAccountView.showAccount(model.accounts);
     },
+    showOrderPage() {
+        document.getElementById("hau-content-page").innerHTML = `
+            ${adminOrderView.renderOrderPageHeader("Order")}
+            ${adminOrderView.renderOrderTable()}
+            
+        `;
+        adminOrderView.showOrder(model.orders);
+        controller.addHandlerOrderStateChange();
+    },
+    addHandlerOrderStateChange() {
+        document.querySelectorAll(".hau-order-process-choice").forEach((element) => {
+            element.addEventListener("change",()=>{
+                model.processOrder(element.parentNode.parentNode.dataset.id,element.value);
+                model.save();
+            });
+        });
+    },
     eventHandleNav(){
         document.getElementById("productBtn").addEventListener("click", () => {
             controller.showProductPage();
@@ -72,7 +90,7 @@ export const controller = {
         });
 
         document.getElementById("orderBtn").addEventListener("click", () => {
-
+            controller.showOrderPage();
             view.changeCurrentBtn(document.getElementById("orderBtn"));
         });
 

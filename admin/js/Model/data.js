@@ -634,3 +634,55 @@ export const accounts = [{
     phone: "0965026920",
     email: "lnhau94@gmail.com",
 }]
+
+export const orders = [{
+    id: 1,
+    date: new Date(),
+    state: "non-process",
+    totalPrice: 1000000
+},{
+    id: 2,
+    date: new Date(),
+    state: "non-process",
+    totalPrice: 1000000
+},{
+    id: 3,
+    date: new Date(),
+    state: "non-process",
+    totalPrice: 1000000
+},{
+    id: 4,
+    date: new Date(),
+    state: "non-process",
+    totalPrice: 1000000
+},{
+    id: 5,
+    date: new Date(),
+    state: "reject",
+    totalPrice: 1000000
+},{
+    id: 6,
+    date: new Date(),
+    state: "reject",
+    totalPrice: 1000000
+},{
+    id: 7,
+    date: new Date(),
+    state: "non-process",
+    totalPrice: 1000000
+},{
+    id: 8,
+    date: new Date(),
+    state: "process",
+    totalPrice: 1000000
+},{
+    id: 9,
+    date: new Date(),
+    state: "process",
+    totalPrice: 1000000
+},{
+    id: 10,
+    date: new Date(),
+    state: "process",
+    totalPrice: 1000000
+}]
