@@ -4,4 +4,16 @@
 // document.getElementById("root").innerHTML += homepageView.renderHomepage();
 
 import { loginController } from "../admin/js/Controller/yang_controller.js";
-loginController.showSigninForm();
+
+window.addEventListener('hashchange', function() {
+	switch(location.href.split('#')[1]){
+        case 'signup':
+            loginController.showSignupForm();
+            break;
+        
+        case 'signin':
+            loginController.showSigninForm();
+            break;
+
+    }
+})

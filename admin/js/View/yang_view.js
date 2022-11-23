@@ -13,6 +13,10 @@ export const view = {
                     <input id="password" type="password" placeholder="Mật khẩu">
                     <small></small>
                     <span></span>
+                    <div class="show-pw-container">
+                        <input type="checkbox" name="show-password" id="btn-change">
+                        <label id="label-show-pw" for="show-password">Hiển thị mật khẩu</label>
+                    </div>
                 </div>
                 <button type="submit" class="btn-submit-log">Đăng nhập</button>
                 <div class="signin-link" id="btn-signin">
@@ -69,9 +73,6 @@ export const view = {
             <div class="signup-link" id="btn-signin">
 
                 Đăng nhập
-            </div>
-            <div class="signin-link" id="btn-signin">
-                    Đăng kí
             </div>
         </form>
     </div>
