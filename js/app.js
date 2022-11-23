@@ -3,7 +3,7 @@ var phone = document.querySelector('#phone')
 var username = document.querySelector('#username')
 var password = document.querySelector('#password')
 var confirmPassword = document.querySelector('#confirm-password')
-var submit = document.querySelector('.btn-submit')
+var submit = document.querySelector('#btn-signup')
 var regexPhone = /(84|0[3|5|7|8|9])+([0-9]{8})\b/g;
 
 function showError(input, message) {
@@ -81,6 +81,7 @@ function checkMatchPasswordError(passwordInput, cfPasswordInput) {
 
 submit.addEventListener('click', e => {
     e.preventDefault()
+    console.log("hello")
     let isEmptyError = checkEmptyError([username, email, password, confirmPassword])
     let isEmailError = checkEmailError(email)
     let isPhoneError = checkPhoneError(phone);
@@ -88,9 +89,9 @@ submit.addEventListener('click', e => {
     let isPasswordLengthError = checkLengthError(password, 6, 14)
     let isMatchError = checkMatchPasswordError(password, confirmPassword)
     let list = localStorage.getItem('accounts')?JSON.parse(localStorage.getItem('accounts')):[];
-    for (let i = 0; i < list.length; i++) {
-        console.log(list[i]['email'])
-    }
+    // for (let i = 0; i < list.length; i++) {
+    //     console.log(list[i]['email'])
+    // }
     if (isEmailError == false && isEmptyError == false && isUsernameLengthError == false && isPasswordLengthError == false && isMatchError == false && isPhoneError == false) {
         let checkError = false;
         let list = localStorage.getItem('accounts')?JSON.parse(localStorage.getItem('accounts')):[];

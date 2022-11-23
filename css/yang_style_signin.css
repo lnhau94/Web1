@@ -166,3 +166,18 @@ body.hide-body {
 .signup-link a:hover {
     text-decoration: underline;
 }
+
+#btn-change{
+    width: 20px;
+}
+
+#btn-change, #label-show-pw{
+    margin: 0px;
+    padding: 0px;
+    display: inline-block;
+    height: 25px;
+    line-height: 25px;
+}
+.show-pw-container{
+    display: block;
+}

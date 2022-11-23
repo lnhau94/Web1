@@ -186,7 +186,7 @@ body {
     transition: all 0.5s linear;
 }
 
-.hau-product-teaser:hover~.hau-product-detail {
+.hau-product-item:hover>.hau-product-detail {
     display: grid;
     grid-template-columns: auto 20% 20% 20%;
     align-items: top;
@@ -199,7 +199,7 @@ body {
     color: white;
 }
 
-.hau-product-teaser:hover {
+.hau-product-item:hover>.hau-product-teaser {
     height: 85px;
     font-size: 20px;
     font-weight: 500;
@@ -329,6 +329,50 @@ h1 {
     color: white;
     z-index: 1;
     box-shadow: 0 5px 8px 0 rgba(0,0,0);
+}
+.hau-order-header,
+.hau-order-item {
+    display: grid;
+    grid-template-columns: auto 15% 15%;
+    height: 50px;
+    align-items: center;
+    margin-bottom: 2px;
+    transition: all 0.5s ease;
+}
+
+.hau-order-item:hover {
+    height: 70px;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    background-color: var(--dark-blue-color);
+    /* background: linear-gradient(to top, #070d2c, #4a4b4c); */
+    color: white;
+    z-index: 1;
+    box-shadow: 0 5px 8px 0 rgba(0,0,0);
+}
+
+.hau-order-process-choice{
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    padding: 2px;
+    overflow: hidden;
+    box-shadow: #4a4b4c 2px 2px ;
+    outline: none;
+}
+
+.hau-order-process-choice:has(option[value="reject"]:checked){
+    background-color: rgb(236 106 94);
+}
+
+.hau-order-process-choice:has(option[value="process"]:checked){
+    background-color: rgb(98 187 94);
+}
+
+.hau-order-process-choice:has(option[value="non-process"]:checked){
+    background-color: rgb(244 191 79);
 }
 
 .hau-table {

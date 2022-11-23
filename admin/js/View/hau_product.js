@@ -23,7 +23,6 @@ export const adminProductView = {
                 <label>Price</label>
                 <label>Brand</label>
                 <label>Option</label>
-                
             </div>
         `
         // <label>Brand</label>
