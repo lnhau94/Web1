@@ -13,6 +13,7 @@ export const loginController = {
         signinBtn.addEventListener('click', (e) => { 
             loginController.showSignupForm();
         })
+        
         submitLog.addEventListener('click', e => {
             e.preventDefault()
             let isEmptyError = this.checkEmptyError([username, password])
