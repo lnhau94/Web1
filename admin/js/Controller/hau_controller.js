@@ -105,6 +105,7 @@ export const controller = {
 
         document.getElementById("dashboardBtn").addEventListener("click", () => {
 
+            statitics.init();
             view.changeCurrentBtn(document.getElementById("dashboardBtn"));
         });
 
