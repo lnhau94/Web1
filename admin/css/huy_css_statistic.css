@@ -73,6 +73,7 @@ canvas {
 .huy-graph-revenue {
   display: none;
   margin-top: 50px;
+  width: 90%;
 }
 .huy-table-revenue, .huy-table-revenue tr th {
   border: cadetblue 2px solid;
@@ -95,4 +96,7 @@ canvas {
   color: white;
   font-weight: 638;
   border: #070d2c 1px solid;
+}
+#huyChart {
+  width: 70% !important;
 }
