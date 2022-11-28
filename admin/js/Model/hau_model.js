@@ -19,7 +19,7 @@ export const model = {
         )
     },
     processOrder(orderId, newState){
-        orders.forEach(element =>{
+        model.orders.forEach(element =>{
             if(element.id == orderId){
                 element.state = newState;
                 return;
@@ -27,10 +27,10 @@ export const model = {
         })
     },
     save(){
-        localStorage.setItem('orders', JSON.stringify(orders));
-        localStorage.setItem('keyboards', JSON.stringify(keyboards));
-        localStorage.setItem('accounts', JSON.stringify(accounts));
-        localStorage.setItem('brands', JSON.stringify(brands));
+        localStorage.setItem('orders', JSON.stringify(model.orders));
+        localStorage.setItem('keyboards', JSON.stringify(model.keyboards));
+        localStorage.setItem('accounts', JSON.stringify(model.accounts));
+        localStorage.setItem('brands', JSON.stringify(model.brands));
     },
     load(){
         // orders = JSON.parse(localStorage.getItem('orders'))
