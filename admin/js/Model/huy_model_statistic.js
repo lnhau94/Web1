@@ -1,10 +1,5 @@
-// const tmpDateFrom = [];
-// const tmpDateTo = [];
-// const tmpMonthPicker = [];
 import {orders} from './data.js'
-// let orders = localStorage.getItem('orders')?JSON.parse(localStorage.getItem('orders')):[];
-
-
+import {model} from './hau_model.js'
 
 export const handleEventStatistics = () => {
   let buttonStatisticProduct
@@ -48,7 +43,8 @@ export const handleEventStatistics = () => {
   });
   submitDate.addEventListener("click", () => {
     if (fromDate.value != "" && toDate.value != "") {
-      document.querySelector("").innerHTML = '';
+      // document.querySelector("").innerHTML = '';
+      console.log(model.keyboards[0]['id']);
     }
     else if (fromDate.value == "" && toDate.value == "") {
       alert("Please enter from date and to date");

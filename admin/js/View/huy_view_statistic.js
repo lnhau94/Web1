@@ -47,7 +47,7 @@ export const statisticsView = {
       <table class="huy-table-revenue">
 
       </table>
-      <canvas id="huyChart" style="width:50%;max-width:900px"></canvas>
+      <canvas id="huyChart" style="max-width:900px"></canvas>
     </div>
     `
   }
