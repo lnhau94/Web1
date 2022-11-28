@@ -653,45 +653,94 @@ export const orders = [{
     id: 2,
     date: new Date(),
     state: "non-process",
-    totalPrice: 1000000
+    totalPrice: 1000000,
+    detail: [{
+      id: 3,
+      switches: "brown",
+      qty: 1
+    },{
+      id: 1,
+      switches: "blue",
+      qty: 1
+    }]
 },{
     id: 3,
     date: new Date(),
     state: "non-process",
-    totalPrice: 1000000
+    totalPrice: 1000000,
+    detail: [{
+      id: 14,
+      switches: "ređ",
+      qty: 1
+    }]
 },{
     id: 4,
     date: new Date(),
     state: "non-process",
-    totalPrice: 1000000
+    totalPrice: 1000000,
+    detail: [{
+      id: 14,
+      switches: "brown",
+      qty: 2
+    }]
 },{
     id: 5,
     date: new Date(),
     state: "reject",
-    totalPrice: 1000000
+    totalPrice: 1000000,
+    detail: [{
+      id: 14,
+      switches: "ređ",
+      qty: 3
+    }]
 },{
     id: 6,
     date: new Date(),
     state: "reject",
-    totalPrice: 1000000
+    totalPrice: 1000000,
+    detail: [{
+      id: 14,
+      switches: "blue",
+      qty: 2
+    }]
 },{
     id: 7,
     date: new Date(),
     state: "non-process",
-    totalPrice: 1000000
+    totalPrice: 1000000,
+    detail: [{
+      id: 14,
+      switches: "brown",
+      qty: 2
+    }]
 },{
     id: 8,
     date: new Date(),
     state: "process",
-    totalPrice: 1000000
+    totalPrice: 1000000,
+    detail: [{
+      id: 14,
+      switches: "ređ",
+      qty: 1
+    }]
 },{
     id: 9,
     date: new Date(),
     state: "process",
-    totalPrice: 1000000
+    totalPrice: 1000000,
+    detail: [{
+      id: 14,
+      switches: "ređ",
+      qty: 3
+    }]
 },{
     id: 10,
     date: new Date(),
     state: "process",
-    totalPrice: 1000000
+    totalPrice: 1000000,
+    detail: [{
+      id: 14,
+      switches: "blue",
+      qty: 1
+    }]
 }]
