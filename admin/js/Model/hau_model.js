@@ -40,8 +40,8 @@ export const model = {
     },
     removeProduct(productid){
         for(let i= 0; i < keyboards.length; i++){
-            if(keyboards[i].id == productid){
-                keyboards.splice(i, 1);
+            if(model.keyboards[i].id == productid){
+                model.keyboards.splice(i, 1);
             }
         }
         model.save();
