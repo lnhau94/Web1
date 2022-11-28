@@ -1,4 +1,8 @@
-import {statisticsView} from './huy_view_statistic.js'
-import {handleEventStatistics} from './huy_model_statistic.js'
-document.getElementById("root").innerHTML += statisticsView.renderStatistics()
-handleEventStatistics()
+import {statisticsView} from '../View/huy_view_statistic.js'
+import {handleEventStatistics} from '../Model/huy_model_statistic.js'
+export const statitics = {
+    init(){
+        document.getElementById("hau-content-page").innerHTML = statisticsView.renderStatistics();
+        handleEventStatistics();
+    }
+}

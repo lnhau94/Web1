@@ -3,6 +3,7 @@ import { view } from "../View/hau_view.js";
 import { adminProductView } from "../View/hau_product.js";
 import { adminAccountView } from "../View/hau_account.js";
 import { adminOrderView } from  "../View/hau_order.js";
+import { statitics } from "./huy_controller_statistic.js";
 
 export const controller = {
     model, view,
@@ -104,6 +105,7 @@ export const controller = {
 
         document.getElementById("dashboardBtn").addEventListener("click", () => {
 
+            statitics.init();
             view.changeCurrentBtn(document.getElementById("dashboardBtn"));
         });
 
@@ -116,5 +118,6 @@ export const controller = {
         view.init();
         controller.eventHandleNav();
         controller.eventHandleChangeNavW();
+        statitics.init();
     }
 }
