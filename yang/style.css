@@ -187,6 +187,7 @@ button:hover{
 
 .slide img {
     width: 100%;
+    object-fit: cover;
     height: 500px;
 }
 
@@ -463,6 +464,7 @@ body.hide-body {
 
 .signin-link {
     text-align: center;
+    cursor: pointer;
 }
 
 .signin-link a {
@@ -477,6 +479,7 @@ body.hide-body {
 
 .signup-link {
     text-align: center;
+    cursor: pointer;
 }
 
 .yang-container {
@@ -513,13 +516,22 @@ body.hide-body {
 }
 
 #btn-change{
-    width: 20px;
+    display: none;
 }
 
+#btn-change + label:before{
+    display: inline-block;
+    width: 25px;
+    font-family: "Font Awesome";
+    content: "";
+}
+#label-show-pw{
+    display: inline-block;
+}
 #btn-change, #label-show-pw{
     margin: 0px;
     padding: 0px;
-    display: inline-block;
+    
     height: 25px;
     line-height: 25px;
 }

@@ -15,7 +15,7 @@ export const view = {
                     <span></span>
                     <div class="show-pw-container">
                         <input type="checkbox" name="show-password" id="btn-change">
-                        <label id="label-show-pw" for="show-password">Hiển thị mật khẩu</label>
+                        <label id="label-show-pw" for="btn-change">Hiển thị mật khẩu</label>
                     </div>
                 </div>
                 <button type="submit" class="btn-submit-log">Đăng nhập</button>
