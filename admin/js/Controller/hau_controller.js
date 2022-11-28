@@ -24,6 +24,14 @@ export const controller = {
         })
         
     },
+    eventHandelRemoveProduct(){
+        document.querySelectorAll(".hau-func-delete-product").forEach( element => {
+            element.addEventListener("click", (e)=>{
+                let productid = element.dataset.id;
+                showModal();
+            })
+        })
+    },
     eventHandleAddproduct(){
         document.querySelector("#addbtn").addEventListener("click", () => {
             document.querySelector(".huy-container-info-pd").classList.remove("huy-container-info-pd-none");
