@@ -1,19 +1,15 @@
-// import {keyboards} from './data.js'
-// import {accounts} from './data.js'
-// import {orders} from './data.js'
+import {keyboards as keyboardsTmp} from './data.js'
+import {accounts as accountsTmp} from './data.js'
+import {orders as orderTmp} from './data.js'
 
-let keyboards = localStorage.getItem('keyboards')?JSON.parse(localStorage.getItem('keyboards')):[];
-let brands = localStorage.getItem('brands')?JSON.parse(localStorage.getItem('brands')):[];
-let accounts = localStorage.getItem('accounts')?JSON.parse(localStorage.getItem('accounts')):[];
-let orders = localStorage.getItem('orders')?JSON.parse(localStorage.getItem('orders')):[];
 
-// let brands = ["Logitech","Akko","DareU","IQUNIX","Leopold"]
+// let brands = 
 
 export const model = {
-    keyboards: keyboards,
-    brands: brands,
-    accounts: accounts,
-    orders: orders,
+    keyboards: localStorage.getItem('keyboards')?JSON.parse(localStorage.getItem('keyboards')):keyboardsTmp,
+    brands: localStorage.getItem('brands')?JSON.parse(localStorage.getItem('brands')):["Logitech","Akko","DareU","IQUNIX","Leopold"],
+    accounts: localStorage.getItem('accounts')?JSON.parse(localStorage.getItem('accounts')):accountsTmp,
+    orders: localStorage.getItem('orders')?JSON.parse(localStorage.getItem('orders')):orderTmp,
     advanceSearch: function (name,minPrice,maxPrice,...brands) {
         return keyboards.filter( (keyboard) => 
             keyboard.name === name &&
@@ -37,17 +33,18 @@ export const model = {
         localStorage.setItem('brands', JSON.stringify(brands));
     },
     load(){
-        orders = JSON.parse(localStorage.getItem('orders'))
+        // orders = JSON.parse(localStorage.getItem('orders'))
+        console.log(orders.length)
         keyboards = JSON.parse(localStorage.getItem('keyboards'))
         accounts = JSON.parse(localStorage.getItem('accounts'))
     },
     removeProduct(productid){
         for(let i= 0; i < keyboards.length; i++){
-            
             if(keyboards[i].id == productid){
                 keyboards.splice(i, 1);
             }
         }
+        model.save();
     }
     
 };

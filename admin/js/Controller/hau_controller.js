@@ -28,14 +28,10 @@ export const controller = {
     eventHandelRemoveProduct(){
         document.querySelectorAll(".hau-func-delete-product").forEach( element => {
             element.addEventListener("click", (e)=>{
-                let productid = element.parentNode.dataset.id;
-                let comfirm =  window.confirm("Bạn có chắc chắn muốn xóa không sản phẩm này?");
-                if (comfirm){
-                    console.log(model.keyboards.length)
+                if (window.confirm("Bạn có chắc chắn muốn xóa không sản phẩm này?")){
                     model.removeProduct(element.parentNode.parentNode.parentNode.dataset.id);
                     console.log(element.parentNode.parentNode.parentNode.dataset.id);
                     controller.showProductPage();
-                    console.log(model.keyboards.length)
                 }
             })
         })
