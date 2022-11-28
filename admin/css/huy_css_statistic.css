@@ -56,7 +56,7 @@ canvas {
   background-color: #19979b;
 }
 .huy-table-header-statistic-revenue {
-  grid-template-columns: auto 20% 25% 20% 25%;
+  grid-template-columns: auto 20% 25% 25% 25%;
 }
 .huy-table-header-statistic-revenue.huy-table-header-statistic-revenue-on {
   display: grid;
