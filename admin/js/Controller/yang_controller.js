@@ -22,7 +22,7 @@ export const loginController = {
                 // let checkLog = false;
                 let tmp = this.checkSignin([username, password]);
                 if (tmp != null) {
-                    window.location.href = "/yang/index.html";
+                    window.location.href = "/index.html";
                     localStorage.setItem('currentaccounts', JSON.stringify(tmp));
                     console.log('true')
                 }

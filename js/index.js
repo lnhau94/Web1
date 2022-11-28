@@ -5,15 +5,6 @@
 
 import { loginController } from "../admin/js/Controller/yang_controller.js";
 
-window.addEventListener('hashchange', function() {
-	switch(location.href.split('#')[1]){
-        case 'signup':
-            loginController.showSignupForm();
-            break;
-        
-        case 'signin':
-            loginController.showSigninForm();
-            break;
 
-    }
-})
+document.getElementById("btn-nav-signup").onclick = () =>loginController.showSignupForm();
+document.getElementById("btn-nav-signin").onclick = () =>loginController.showSigninForm();
