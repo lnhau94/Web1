@@ -33,6 +33,22 @@ body {
     box-sizing: border-box;
 }
 
+.hau-product-info-table{
+    width: 90%;
+    height: 30px;
+    border-radius: 5px;
+    color: var(--dark-blue-color);
+    border: #fff 1px solid;
+    font-size: 15px;
+    overflow-x: scroll;
+    box-shadow: 0 3px 8px 0 rgb(117, 116, 116);
+}
+.hau-product-item:hover > * >.hau-product-info-table{
+    box-shadow: 0 3px 8px 0 rgb(249, 249, 249);
+    border: var(--dark-blue-color) 1px solid;
+
+}
+
 .hau-button{
     text-align: center;
     height: 35px;

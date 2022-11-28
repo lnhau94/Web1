@@ -11,7 +11,7 @@ export const model = {
     accounts: localStorage.getItem('accounts')?JSON.parse(localStorage.getItem('accounts')):accountsTmp,
     orders: localStorage.getItem('orders')?JSON.parse(localStorage.getItem('orders')):orderTmp,
     advanceSearch: function (name,minPrice,maxPrice,...brands) {
-        return keyboards.filter( (keyboard) => 
+        return model.keyboards.filter( (keyboard) => 
             keyboard.name === name &&
             keyboard.price >= minPrice &&
             keyboard.price <= maxPrice &&
