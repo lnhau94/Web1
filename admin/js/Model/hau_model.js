@@ -40,6 +40,14 @@ export const model = {
         orders = JSON.parse(localStorage.getItem('orders'))
         keyboards = JSON.parse(localStorage.getItem('keyboards'))
         accounts = JSON.parse(localStorage.getItem('accounts'))
+    },
+    removeProduct(productid){
+        for(let i= 0; i < keyboards.length; i++){
+            
+            if(keyboards[i].id == productid){
+                keyboards.splice(i, 1);
+            }
+        }
     }
     
 };
