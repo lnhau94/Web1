@@ -46,6 +46,20 @@ export const handleEventStatistics = () => {
     document.querySelector(".huy-table-header-statistic-product").classList.remove("huy-table-header-statistic-product-on");
     document.querySelector(".huy-year-picker").classList.add("huy-year-picker-on");
   });
+  submitDate.addEventListener("click", () => {
+    if (fromDate.value != "" && toDate.value != "") {
+      console.log("");
+    }
+    else if (fromDate.value == "" && toDate.value == "") {
+      alert("Please enter from date and to date");
+    }
+    else if (fromDate.value == "") {
+      alert("Please enter from date");
+    }
+    else {
+      alert("Please enter to date");
+    }
+  });
   submitYear.addEventListener("click", () => {
     let tmpData = [0,0,0,0,0,0,0,0,0,0,0,0];
     let Months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
@@ -150,13 +164,5 @@ export const handleEventStatistics = () => {
         ` 
       }
     }
-
-    // console.log(typeof(inputYear.value));
-    // console.log(tmpData);
-    // for (let i = 1; i <= Months.length; i++) {
-    //   console.log(i);
-    //   // console.log(i+1);
-    //   // console.log((new Date().getMonth() + 1));
-    // }
   });
 }
