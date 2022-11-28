@@ -48,7 +48,7 @@ export const handleEventStatistics = () => {
   });
   submitDate.addEventListener("click", () => {
     if (fromDate.value != "" && toDate.value != "") {
-      console.log("");
+      document.querySelector("").innerHTML = '';
     }
     else if (fromDate.value == "" && toDate.value == "") {
       alert("Please enter from date and to date");
