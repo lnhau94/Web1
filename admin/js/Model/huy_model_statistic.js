@@ -163,6 +163,12 @@ export const handleEventStatistics = () => {
         </tr>
         ` 
       }
+      document.querySelector(".huy-table-revenue").innerHTML += `
+      <tr>
+        <th></th>
+        <th>${tmpData.reduce((a, b) => a + b, 0)} VND</th>
+      </tr>
+      `
     }
   });
 }
