@@ -1,3 +1,5 @@
+import { model } from "../Model/hau_model.js";
+
 export const adminProductView = {
     renderProductTable(){
         return `
@@ -32,14 +34,21 @@ export const adminProductView = {
         //         
     },
     renderProductItem(productData){
+        let brandchoice = ""
+        model.brands.forEach(b => {
+            brandchoice += `<option ${productData.brand.toUpperCase()==b.toUpperCase()?"selected":""} value="${b}">${b}</option>}`
+        })
+            
         return `
             <div class="hau-product-item hau-table-item" id="hau-product-item" data-id="${productData.id}">
 
                 <div class="hau-product-teaser">
-                    <label>${productData.name}</label>
+                    <input class="hau-product-info-table" type="text" value="${productData.name}">
                     <img class="hau-product-image" src="/imgs/DataKeyboard/${productData.img[0]}" alt="${productData.name}"/>
-                    <label>${productData.price}</label>
-                    <label>${productData.brand}</label>
+                    <input class="hau-product-info-table" type="text" value="${productData.price}">
+                    <select class="hau-product-info-table">
+                        ${brandchoice}
+                    </select>
                     <div><button class="hau-button hau-func-delete-product"><i class="fa-solid fa-trash"></i></button></div>
                 </div>
 

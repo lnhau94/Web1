@@ -639,7 +639,11 @@ export const orders = [{
     id: 1,
     date: new Date(),
     state: "non-process",
-    totalPrice: 1000000
+    totalPrice: 1000000,
+    detail:[{
+        id: 1,
+        qty: [1,0,0]
+    }]
 },{
     id: 2,
     date: new Date(),
