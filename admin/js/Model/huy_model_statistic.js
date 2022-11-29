@@ -9,6 +9,12 @@ export const handleEventStatistics = () => {
   let submitDate
   let submitYear
   let inputYear
+  let tmpButtonProduct
+  let tmpButtonRevenue
+  let tmpButtonGraph
+  tmpButtonProduct = false
+  tmpButtonRevenue = false
+  tmpButtonGraph = false
   buttonStatisticProduct = document.querySelector(".huy-button-statistic-product");
   buttonStatisticRevenue = document.querySelector(".huy-button-statistic-revenue");
   buttonStatisticRevenueYear = document.querySelector(".huy-button-statistic-revenue-year");
@@ -22,16 +28,32 @@ export const handleEventStatistics = () => {
     document.querySelector(".huy-year-picker").classList.remove("huy-year-picker-on");
     document.querySelector(".huy-table-header-statistic-revenue").classList.remove("huy-table-header-statistic-revenue-on");
     document.querySelector(".huy-graph-revenue").classList.remove("huy-graph-revenue-on");
+    if (document.querySelector(".huy-table-statistic-revenue").contains(document.querySelector(".huy-table-item-revenue"))) {
+      document.querySelectorAll(".huy-table-item-revenue").forEach(element => {
+        element.classList.remove("huy-table-item-revenue-on");
+      });
+    }
     document.querySelector(".huy-date-picker").classList.add("huy-date-picker-on");
     document.querySelector(".huy-table-header-statistic-product").classList.add("huy-table-header-statistic-product-on");
+    tmpButtonProduct = true
+    tmpButtonRevenue = false
+    tmpButtonGraph = false
   });
   buttonStatisticRevenue.addEventListener("click", () => {
     document.querySelector(".huy-date-picker").classList.remove("huy-date-picker-on");
     document.querySelector(".huy-year-picker").classList.remove("huy-year-picker-on");
     document.querySelector(".huy-table-header-statistic-product").classList.remove("huy-table-header-statistic-product-on");
     document.querySelector(".huy-graph-revenue").classList.remove("huy-graph-revenue-on");
+    if (document.querySelector(".huy-table-statistic-product").contains(document.querySelector(".huy-table-item-product"))) {
+      document.querySelectorAll(".huy-table-item-product").forEach(element => {
+        element.classList.remove("huy-table-item-product-on");
+      });
+    }
     document.querySelector(".huy-date-picker").classList.add("huy-date-picker-on");
     document.querySelector(".huy-table-header-statistic-revenue").classList.add("huy-table-header-statistic-revenue-on");
+    tmpButtonProduct = false
+    tmpButtonRevenue = true
+    tmpButtonGraph = false
   });
   buttonStatisticRevenueYear.addEventListener("click", () => {
     document.querySelector(".huy-date-picker").classList.remove("huy-date-picker-on");
@@ -39,6 +61,9 @@ export const handleEventStatistics = () => {
     document.querySelector(".huy-table-header-statistic-revenue").classList.remove("huy-table-header-statistic-revenue-on");
     document.querySelector(".huy-table-header-statistic-product").classList.remove("huy-table-header-statistic-product-on");
     document.querySelector(".huy-year-picker").classList.add("huy-year-picker-on");
+    tmpButtonProduct = false
+    tmpButtonRevenue = false
+    tmpButtonGraph = true
   });
   submitDate.addEventListener("click", () => {
     document.querySelector(".huy-table-statistic-revenue").innerHTML = '';
@@ -69,10 +94,35 @@ export const handleEventStatistics = () => {
             `;
             document.querySelector(".huy-table-statistic-product").innerHTML += `
             <div class="huy-table-item-product">
-
+              <label>Chào cậu</label>
             </div>
             `;
           }
+        }
+        if (tmpButtonProduct == true) {
+          document.querySelectorAll(".huy-table-item-product").forEach(element => {
+            element.classList.add("huy-table-item-product-on");
+          });
+          document.querySelectorAll(".huy-table-item-revenue").forEach(element => {
+            element.classList.remove("huy-table-item-revenue-on");
+          });
+        }
+        else if (tmpButtonRevenue == true) {
+          console.log("Da fix");
+          document.querySelectorAll(".huy-table-item-product").forEach(element => {
+            element.classList.remove("huy-table-item-product-on");
+          });
+          document.querySelectorAll(".huy-table-item-revenue").forEach(element => {
+            element.classList.add("huy-table-item-revenue-on");
+          });
+        }
+        else if (tmpButtonGraph == true) {
+          document.querySelectorAll(".huy-table-item-product").forEach(element => {
+            element.classList.remove("huy-table-item-product-on");
+          });
+          document.querySelectorAll(".huy-table-item-revenue").forEach(element => {
+            element.classList.remove("huy-table-item-revenue-on");
+          });
         }
       }
       else if (newFromDate.getDate() == newToDate.getDate() && newFromDate.getMonth() == newToDate.getMonth() && newFromDate.getFullYear() == newToDate.getFullYear()) {
@@ -82,7 +132,6 @@ export const handleEventStatistics = () => {
             //CreateStatistic
             sttCount += 1;
             for (let j = 0; j < model.orders[i]['detail'].length; j++) {
-              console.log(Number(model.orders[i]['detail'][j]['qty']));
               totalQtyOrder += Number(model.orders[i]['detail'][j]['qty']);
             }
             document.querySelector(".huy-table-statistic-revenue").innerHTML += `
@@ -99,6 +148,18 @@ export const handleEventStatistics = () => {
 
             </div>
             `;
+            buttonStatisticProduct.addEventListener("click", () => {
+              document.querySelector(".huy-table-statistic-revenue").display = "none";
+              document.querySelector(".huy-table-statistic-product").display = "grid";
+            });
+            buttonStatisticRevenue.addEventListener("click", () => {
+              document.querySelector(".huy-table-statistic-product").display = "none";
+              document.querySelector(".huy-table-statistic-revenue").display = "grid";
+            });
+            buttonStatisticRevenueYear.addEventListener("click", () => {
+              document.querySelector(".huy-table-statistic-product").display = "none";
+              document.querySelector(".huy-table-statistic-revenue").display = "none";
+            });
           }
         }
       }

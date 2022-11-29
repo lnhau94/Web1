@@ -77,14 +77,15 @@ div {
 }
 .huy-frame-edit-product {
   position: relative;
-  left: 25%;
+  left: 2%;
   top: 25%;
   bottom: 25%;
   right: 25%;
   border-radius: 12px;
   border-style: groove;
-  width: 55%;
+  width: 96%;
   height: 50%;
+  box-shadow: grey 5px 5px;
 }
 .huy-frame-upload-img {
   position: relative;
