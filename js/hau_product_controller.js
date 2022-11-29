@@ -67,6 +67,10 @@ export const sellController = {
     },
     showCart(){
         document.getElementById("modal").innerHTML = productView.renderCart();
+        sellController.eventHandleCash();
+        document.getElementById("cart-close-btn").addEventListener("click",()=>{
+            document.getElementById("modal").innerHTML = ""
+        })
     },
     eventHandleShowCart(){
         document.getElementById("show-cart-btn").addEventListener("click",()=>{
@@ -78,7 +82,33 @@ export const sellController = {
     },
     eventHandleCash(){
         document.getElementById("cart-check-buy-btn").addEventListener("click",()=>{
-            
+            let odlist = []
+            document.querySelectorAll(".buy-checker").forEach(element =>{
+                if(element.checked){
+                    odlist.push({
+                        id:element.parentNode.parentNode.dataset.id,
+                        qty:element.parentNode.parentNode.childNodes[5].childNodes[3].value
+                    })
+                    
+                    sellController.removeFromCart(element.parentNode.parentNode.dataset.id);
+                }
+                
+            })
+            model.addNewOrder(odlist);
+        })
+    },
+    removeFromCart(id){
+        model.accounts.forEach(e=>{
+            if(e.username == JSON.parse(localStorage.getItem("currentaccounts")).username){
+                for(let ix = 0; ix<e.cart.length; ix++){
+                    if(e.cart[ix].id == id){
+                        e.cart.splice(ix,1)
+                        console.log(e)
+                    }
+                }
+                localStorage.setItem("currentaccounts",JSON.stringify(e));
+                sellController.showCart();
+            }
         })
     }
 }

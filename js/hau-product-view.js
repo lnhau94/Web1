@@ -85,7 +85,7 @@ export const productView = {
                         <button class="hau-func-btn">
                             <i class="fa-solid fa-minus"></i>
                         </button>
-                        <input type="text" value="${e.qty}">
+                        <input class="hau-cart-item-txt" type="text" value="${e.qty}">
                         <button class="hau-func-btn">
                             <i class="fa-solid fa-add"></i>
                         </button>
