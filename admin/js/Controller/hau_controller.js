@@ -36,6 +36,19 @@ export const controller = {
             })
         })
     },
+    eventHandleEditProduct(){
+        document.querySelectorAll(".hau-func-edit-product").forEach(e=>{
+            e.addEventListener("click",()=>{
+                let nod = e.parentNode.parentNode.childNodes;
+                let id = e.parentNode.parentNode.parentNode.dataset.id;
+                let name = nod[1].value;
+                let price = nod[5].value;
+                let brand = nod[7].value;
+                model.editProduct(id,name,price,brand);
+                controller.showProductPage();
+            })
+        })
+    },
     eventHandleAddproduct(){
         document.querySelector("#addbtn").addEventListener("click", () => {
             document.querySelector(".huy-container-info-pd").classList.remove("huy-container-info-pd-none");
@@ -69,6 +82,7 @@ export const controller = {
         controller.eventHandleShowProductImage();
         controller.eventHandleAddproduct();
         controller.eventHandelRemoveProduct();
+        controller.eventHandleEditProduct();
         
     },
     showAccountPage() {
