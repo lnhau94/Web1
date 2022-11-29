@@ -36,7 +36,14 @@ export const adminProductView = {
     renderProductItem(productData){
         let brandchoice = ""
         model.brands.forEach(b => {
-            brandchoice += `<option ${productData.brand.toUpperCase()==b.toUpperCase()?"selected":""} value="${b}">${b}</option>}`
+            let brr = (String(productData.brand));
+            if(brr.toUpperCase()==b.toUpperCase()){
+                brandchoice += `<option selected value="${b}">${b}</option>}`
+            }
+            else{
+
+                brandchoice += `<option value="${b}">${b}</option>}`
+            }
         })
             
         return `
@@ -49,7 +56,14 @@ export const adminProductView = {
                     <select class="hau-product-info-table">
                         ${brandchoice}
                     </select>
-                    <div><button class="hau-button hau-func-delete-product"><i class="fa-solid fa-trash"></i></button></div>
+                    <div>
+                        <button class="hau-button hau-func-delete-product">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                        <button class="hau-button hau-func-edit-product">
+                            <i class="fa-solid fa-pen"></i>
+                        </button>
+                    </div>
                 </div>
 
                 <div class="hau-product-detail">

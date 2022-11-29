@@ -39,9 +39,20 @@ export const model = {
         accounts = JSON.parse(localStorage.getItem('accounts'))
     },
     removeProduct(productid){
-        for(let i= 0; i < keyboards.length; i++){
-            if(keyboards[i].id == productid){
-                keyboards.splice(i, 1);
+        for(let i= 0; i < model.keyboards.length; i++){
+            if(model.keyboards[i].id == productid){
+                model.keyboards.splice(i, 1);
+                
+            }
+        }
+        model.save();
+    },
+    editProduct(id,name,price,brand){
+        for(let i= 0; i < model.keyboards.length; i++){
+            if(model.keyboards[i].id == id){
+                model.keyboards[i].name = name;
+                model.keyboards[i].price = price;
+                model.keyboards[i].brand = brand;
             }
         }
         model.save();
