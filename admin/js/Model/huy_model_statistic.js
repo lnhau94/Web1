@@ -41,14 +41,28 @@ export const handleEventStatistics = () => {
     document.querySelector(".huy-year-picker").classList.add("huy-year-picker-on");
   });
   submitDate.addEventListener("click", () => {
+    document.querySelector(".huy-table-statistic-revenue").innerHTML = '';
+    document.querySelector(".huy-table-statistic-product").innerHTML = '';
     if (fromDate.value != "" && toDate.value != "") {
       // document.querySelector("").innerHTML = '';
+      let sttCount = 0;
       let newFromDate = new Date(fromDate.value);
       let newToDate = new Date(toDate.value);
       if (newFromDate < newToDate) {
         for (let i = 0; i < model.orders.length; i++) {
           if (newFromDate <= new Date(model.orders[i]['date']) && newToDate >= new Date(model.orders[i]['date'])){
             //CreateStatistic
+            sttCount += 1;
+            document.querySelector(".huy-table-statistic-revenue").innerHTML += `
+            <div class="huy-table-item-revenue">
+              <label>${sttCount}</label>
+            </div>
+            `;
+            document.querySelector(".huy-table-statistic-product").innerHTML += `
+            <div class="huy-table-item-product">
+
+            </div>
+            `;
           }
         }
       }
@@ -56,6 +70,16 @@ export const handleEventStatistics = () => {
         for (let i = 0; i < model.orders.length; i++) {
           if (newFromDate == new Date(model.orders[i]['date'])){
             //CreateStatistic
+            document.querySelector(".huy-table-statistic-revenue").innerHTML += `
+            <div class="huy-table-item-revenue">
+
+            </div>
+            `;
+            document.querySelector(".huy-table-statistic-product").innerHTML += `
+            <div class="huy-table-item-product">
+
+            </div>
+            `;
           }
         }
       }
