@@ -76,7 +76,6 @@ export const productView = {
         let text = "";
         JSON.parse(localStorage.getItem("currentaccounts")).cart.forEach(e => {
             let product = model.findProductById(e.id);
-            console.log(product);
             if(product){
                 text += `
                 <div class="hau-cart-item" data-id="${e.id}">
@@ -91,6 +90,10 @@ export const productView = {
                             <i class="fa-solid fa-add"></i>
                         </button>
                     </div>
+                    <div>
+                        <input class="buy-checker hau-checkbox-func" type="checkbox" name="checker">
+                        <label for="checker" class="hau-label">Chọn mua</label>
+                    </div>
                 </div>
             `
             }
@@ -98,8 +101,11 @@ export const productView = {
         })
         return `
             <div class="hau-cart-container">
-                <button id="cart-close-btn">
+                <button class="hau-cart-func-btn" id="cart-close-btn">
                     <i class="fa-solid fa-xmark"></i>
+                </button>
+                <button class="hau-cart-func-btn" id="cart-check-buy-btn">
+                    <i class="fa-solid fa-check">CASH</i>
                 </button>
                 ${text}
             </div>
