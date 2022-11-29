@@ -26,7 +26,7 @@ export const productView = {
                         ${productData.brand}
                     </label>
                     <div>
-                        <button class="hau-button-sell hau-sell-product">
+                        <button class="hau-button-sell hau-sell-product add-to-cart-btn">
                             Add to Cart
                         </button>
                         
@@ -71,5 +71,38 @@ export const productView = {
         <div class="hau-pagination-container">
             ${pagbtn}
         </div>`
+    },
+    renderCart(){
+        let text = "";
+        JSON.parse(localStorage.getItem("currentaccounts")).cart.forEach(e => {
+            let product = model.findProductById(e.id);
+            console.log(product);
+            if(product){
+                text += `
+                <div class="hau-cart-item" data-id="${e.id}">
+                    <label class="hau-cart-item-name">${product.name}</label>
+                    <img src="/imgs/DataKeyboard/${product.img[0]}">
+                    <div>
+                        <button class="hau-func-btn">
+                            <i class="fa-solid fa-minus"></i>
+                        </button>
+                        <input type="text" value="${e.qty}">
+                        <button class="hau-func-btn">
+                            <i class="fa-solid fa-add"></i>
+                        </button>
+                    </div>
+                </div>
+            `
+            }
+            
+        })
+        return `
+            <div class="hau-cart-container">
+                <button id="cart-close-btn">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                ${text}
+            </div>
+        `
     }
 }
