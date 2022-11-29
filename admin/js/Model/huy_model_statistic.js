@@ -71,6 +71,8 @@ export const handleEventStatistics = () => {
     if (fromDate.value != "" && toDate.value != "") {
       // document.querySelector("").innerHTML = '';
       let sttCount = 0;
+      let sttCountPD = 0;
+      let tmpKeyBoard = new Object();
       let newFromDate = new Date(fromDate.value);
       let newToDate = new Date(toDate.value);
       if (newFromDate < newToDate) {
@@ -80,7 +82,6 @@ export const handleEventStatistics = () => {
             //CreateStatistic
             sttCount += 1;
             for (let j = 0; j < model.orders[i]['detail'].length; j++) {
-              console.log(Number(model.orders[i]['detail'][j]['qty']));
               totalQtyOrder += Number(model.orders[i]['detail'][j]['qty']);
             }
             document.querySelector(".huy-table-statistic-revenue").innerHTML += `
@@ -92,13 +93,54 @@ export const handleEventStatistics = () => {
               <label>${model.orders[i]['totalPrice']}</label>
             </div>
             `;
-            document.querySelector(".huy-table-statistic-product").innerHTML += `
-            <div class="huy-table-item-product">
-              <label>Chào cậu</label>
-            </div>
-            `;
+            for (let j = 0; j < model.orders[i]['detail'].length; j++) {
+              if (tmpKeyBoard.hasOwnProperty(model.orders[i]['detail'][j]['id']) == false) {
+                for (let t = 0; t < model.keyboards.length; t++) {
+                  if (model.orders[i]['detail'][j]['id'] == model.keyboards[t]['id']) {
+                    tmpKeyBoard[`${model.orders[i]['detail'][j]['id']}`] = [Number(model.orders[i]['detail'][j]['qty']), model.keyboards[t]['name'], model.keyboards[t]['price']];
+                    break;
+                  }
+                }
+              }
+              else {
+                for (let t = 0; t < model.keyboards.length; t++) {
+                  if (model.orders[i]['detail'][j]['id'] == model.keyboards[t]['id']) {
+                    tmpKeyBoard[`${model.orders[i]['detail'][j]['id']}`][0] += Number(model.orders[i]['detail'][j]['qty']);
+                    break;
+                  }
+                }
+                // tmpKeyBoard[`${model.orders[i]['detail'][j]['id']}`][0] += Number(model.orders[i]['detail'][j]['qty']);
+              }
+            }
           }
         }
+        for (const [key, value] of Object.entries(tmpKeyBoard)) {
+          sttCountPD += 1;
+          document.querySelector(".huy-table-statistic-product").innerHTML += `
+          <div class="huy-table-item-product">
+            <label>${sttCountPD}</label>
+            <label>${value[1]}</label>
+            <label>${value[0]}</label>
+            <label>${value[2]}</label>
+            <label>${Number(value[0])*Number(value[2])}</label>
+          </div>
+          `;
+        }
+        let tmpTotalQtyPD = 0;
+        let tmpTotalPricePD = 0;
+        for (const [key, value] of Object.entries(tmpKeyBoard)) {
+          tmpTotalQtyPD += Number(value[0]);
+          tmpTotalPricePD += Number(value[0])*Number(value[2]);
+        }
+        document.querySelector(".huy-table-statistic-product").innerHTML += `
+        <div class="huy-table-item-product">
+          <label></label>
+          <label>TOTAL</label>
+          <label>${tmpTotalQtyPD}</label>
+          <label></label>
+          <label>${tmpTotalPricePD}</label>
+        </div>
+        `;
         if (tmpButtonProduct == true) {
           document.querySelectorAll(".huy-table-item-product").forEach(element => {
             element.classList.add("huy-table-item-product-on");
@@ -108,7 +150,6 @@ export const handleEventStatistics = () => {
           });
         }
         else if (tmpButtonRevenue == true) {
-          console.log("Da fix");
           document.querySelectorAll(".huy-table-item-product").forEach(element => {
             element.classList.remove("huy-table-item-product-on");
           });
@@ -143,24 +184,77 @@ export const handleEventStatistics = () => {
               <label>${model.orders[i]['totalPrice']}</label>
             </div>
             `;
-            document.querySelector(".huy-table-statistic-product").innerHTML += `
-            <div class="huy-table-item-product">
-
-            </div>
-            `;
-            buttonStatisticProduct.addEventListener("click", () => {
-              document.querySelector(".huy-table-statistic-revenue").display = "none";
-              document.querySelector(".huy-table-statistic-product").display = "grid";
-            });
-            buttonStatisticRevenue.addEventListener("click", () => {
-              document.querySelector(".huy-table-statistic-product").display = "none";
-              document.querySelector(".huy-table-statistic-revenue").display = "grid";
-            });
-            buttonStatisticRevenueYear.addEventListener("click", () => {
-              document.querySelector(".huy-table-statistic-product").display = "none";
-              document.querySelector(".huy-table-statistic-revenue").display = "none";
-            });
+            for (let j = 0; j < model.orders[i]['detail'].length; j++) {
+              if (tmpKeyBoard.hasOwnProperty(model.orders[i]['detail'][j]['id']) == false) {
+                for (let t = 0; t < model.keyboards.length; t++) {
+                  if (model.orders[i]['detail'][j]['id'] == model.keyboards[t]['id']) {
+                    tmpKeyBoard[`${model.orders[i]['detail'][j]['id']}`] = [Number(model.orders[i]['detail'][j]['qty']), model.keyboards[t]['name'], model.keyboards[t]['price']];
+                    break;
+                  }
+                }
+              }
+              else {
+                for (let t = 0; t < model.keyboards.length; t++) {
+                  if (model.orders[i]['detail'][j]['id'] == model.keyboards[t]['id']) {
+                    tmpKeyBoard[`${model.orders[i]['detail'][j]['id']}`][0] += Number(model.orders[i]['detail'][j]['qty']);
+                    break;
+                  }
+                }
+                // tmpKeyBoard[`${model.orders[i]['detail'][j]['id']}`][0] += Number(model.orders[i]['detail'][j]['qty']);
+              }
+            }
           }
+        }
+        for (const [key, value] of Object.entries(tmpKeyBoard)) {
+          sttCountPD += 1;
+          document.querySelector(".huy-table-statistic-product").innerHTML += `
+          <div class="huy-table-item-product">
+            <label>${sttCountPD}</label>
+            <label>${value[1]}</label>
+            <label>${value[0]}</label>
+            <label>${value[2]}</label>
+            <label>${Number(value[0])*Number(value[2])}</label>
+          </div>
+          `;
+        }
+        let tmpTotalQtyPD = 0;
+        let tmpTotalPricePD = 0;
+        for (const [key, value] of Object.entries(tmpKeyBoard)) {
+          tmpTotalQtyPD += Number(value[0]);
+          tmpTotalPricePD += Number(value[0])*Number(value[2]);
+        }
+        document.querySelector(".huy-table-statistic-product").innerHTML += `
+        <div class="huy-table-item-product">
+          <label></label>
+          <label>TOTAL</label>
+          <label>${tmpTotalQtyPD}</label>
+          <label></label>
+          <label>${tmpTotalPricePD}</label>
+        </div>
+        `;
+        if (tmpButtonProduct == true) {
+          document.querySelectorAll(".huy-table-item-product").forEach(element => {
+            element.classList.add("huy-table-item-product-on");
+          });
+          document.querySelectorAll(".huy-table-item-revenue").forEach(element => {
+            element.classList.remove("huy-table-item-revenue-on");
+          });
+        }
+        else if (tmpButtonRevenue == true) {
+          document.querySelectorAll(".huy-table-item-product").forEach(element => {
+            element.classList.remove("huy-table-item-product-on");
+          });
+          document.querySelectorAll(".huy-table-item-revenue").forEach(element => {
+            element.classList.add("huy-table-item-revenue-on");
+          });
+        }
+        else if (tmpButtonGraph == true) {
+          document.querySelectorAll(".huy-table-item-product").forEach(element => {
+            element.classList.remove("huy-table-item-product-on");
+          });
+          document.querySelectorAll(".huy-table-item-revenue").forEach(element => {
+            element.classList.remove("huy-table-item-revenue-on");
+          });
         }
       }
       else if (newFromDate > newToDate) {
