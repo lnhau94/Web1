@@ -104,7 +104,7 @@ export const handleEventStatistics = () => {
       alert("Please enter year");
     } 
     else {
-      for(let i = 0; i < orders.length; i++) {
+      for(let i = 0; i < model.orders.length; i++) {
         if (model.orders[i]['state'] == "process" && new Date(model.orders[i]['date']).getFullYear() == Number(inputYear.value)){
           let tmpMonth = new Date(model.orders[i]['date']).getMonth();
           tmpData[tmpMonth] += model.orders[i]['totalPrice'];
