@@ -143,28 +143,40 @@ export const handleEventStatistics = () => {
           }
         },
       });
+      let monthRow = "<th>Month</th>";
+      let revenueData = "<th>Revenue</th>";
+      for (let i=0; i < Months.length; i++){
+        monthRow += `
+          <th>${Months[i]}</th>
+        `
+        revenueData += `<td>${tmpData[i]} VND</td>`
+      }
+      monthRow += "<th>TOTAL</th>"
+      revenueData += `<th>${tmpData.reduce((a, b) => a + b, 0)} VND</th>`
       document.querySelector(".huy-graph-revenue").classList.add("huy-graph-revenue-on");
       document.querySelector(".huy-table-revenue").innerHTML = ''
       document.querySelector(".huy-table-revenue").innerHTML = `
       <tr>
-        <th>Month</th>
-        <th>Revenue</th>
+        ${monthRow}
       </tr>
-      `
-      for (let i=0; i < Months.length; i++){
-        document.querySelector(".huy-table-revenue").innerHTML += `
-        <tr>
-          <th>${Months[i]}</th>
-          <th>${tmpData[i]} VND</th>
-        </tr>
-        ` 
-      }
-      document.querySelector(".huy-table-revenue").innerHTML += `
       <tr>
-        <th></th>
-        <th>${tmpData.reduce((a, b) => a + b, 0)} VND</th>
+        ${revenueData}
       </tr>
       `
+      // for (let i=0; i < Months.length; i++){
+      //   document.querySelector(".huy-table-revenue").innerHTML += `
+      //   <tr>
+      //     <th>${Months[i]}</th>
+      //     <th>${tmpData[i]} VND</th>
+      //   </tr>
+      //   ` 
+      // }
+      // document.querySelector(".huy-table-revenue").innerHTML += `
+      // <tr>
+      //   <th></th>
+      //   <th>${tmpData.reduce((a, b) => a + b, 0)} VND</th>
+      // </tr>
+      // `
     }
   });
 }

@@ -75,13 +75,17 @@ canvas {
   margin-top: 50px;
   width: 90%;
 }
-.huy-table-revenue, .huy-table-revenue tr th {
+.huy-table-revenue {
+  height: 60% !important;
+  margin-left: 15%;
+}
+.huy-table-revenue, .huy-table-revenue tr th, td {
   border: cadetblue 2px solid;
   text-align: center;
   border-spacing: 0;
 }
 .huy-graph-revenue.huy-graph-revenue-on {
-  display: flex;
+  display: block;
 }
 .huy-button-statistic-product, .huy-button-statistic-revenue, .huy-button-statistic-revenue-year {
   background-color: #19979b;
@@ -99,4 +103,5 @@ canvas {
 }
 #huyChart {
   width: 70% !important;
+  height: 80% !important;
 }
