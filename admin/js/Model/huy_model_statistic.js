@@ -61,6 +61,16 @@ export const handleEventStatistics = () => {
     document.querySelector(".huy-table-header-statistic-revenue").classList.remove("huy-table-header-statistic-revenue-on");
     document.querySelector(".huy-table-header-statistic-product").classList.remove("huy-table-header-statistic-product-on");
     document.querySelector(".huy-year-picker").classList.add("huy-year-picker-on");
+    if (document.querySelector(".huy-table-statistic-product").contains(document.querySelector(".huy-table-item-product"))) {
+      document.querySelectorAll(".huy-table-item-product").forEach(element => {
+        element.classList.remove("huy-table-item-product-on");
+      });
+    }
+    if (document.querySelector(".huy-table-statistic-revenue").contains(document.querySelector(".huy-table-item-revenue"))) {
+      document.querySelectorAll(".huy-table-item-revenue").forEach(element => {
+        element.classList.remove("huy-table-item-revenue-on");
+      });
+    }
     tmpButtonProduct = false
     tmpButtonRevenue = false
     tmpButtonGraph = true
