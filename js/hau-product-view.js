@@ -3,6 +3,7 @@ import {model} from '../admin/js/Model/hau_model.js';
 export const productView = {
     renderProductItem(productData){
         let text = "";
+        
         productData.img.forEach(e =>{
             text += `<div>
             <img class="hau-product-image hau-product-info-sell" src="/imgs/DataKeyboard/${e}" alt="${productData.name}"/>
@@ -50,7 +51,7 @@ export const productView = {
     renderProduct(productList,page){
         let text = ""
         page = Number(page);
-        for (let i = (page-1)*6 ;i < page*6; i++){
+        for (let i = (page-1)*6 ;i < page*6 && i < productList.length; i++){
             text += productView.renderProductItem(productList[i]);
         }
         return `

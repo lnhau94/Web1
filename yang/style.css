@@ -565,15 +565,6 @@ body.hide-body {
 }
 
 
-@keyframes hau-show-image{
-    0%{
-        bottom: -100px;
-    }
-    100%{
-        bottom: 100%;
-    }
-}
-
 .hau-product-image-show{
     display: none;
     width: 0px;
@@ -653,4 +644,20 @@ body.hide-body {
 .account-function ul, .account-function li {
     padding: 0;
     margin: 0;
+}
+
+.hau-pagination-container{
+    padding: 0;
+    margin: 5px;
+    display: flex;
+    justify-content: flex-end;
+    
+}
+.hau-pagination-container *{
+    margin: 5px;
+}
+
+.current-brand{
+    background-color: #ff0099;
+    color: white;
 }
