@@ -50,12 +50,21 @@ export const handleEventStatistics = () => {
       let newToDate = new Date(toDate.value);
       if (newFromDate < newToDate) {
         for (let i = 0; i < model.orders.length; i++) {
-          if (newFromDate <= new Date(model.orders[i]['date']) && newToDate >= new Date(model.orders[i]['date'])){
+          let totalQtyOrder = 0;
+          if (newFromDate <= new Date(model.orders[i]['date']) && newToDate >= new Date(model.orders[i]['date']) && model.orders[i]['state'] == "process"){
             //CreateStatistic
             sttCount += 1;
+            for (let j = 0; j < model.orders[i]['detail'].length; j++) {
+              console.log(Number(model.orders[i]['detail'][j]['qty']));
+              totalQtyOrder += Number(model.orders[i]['detail'][j]['qty']);
+            }
             document.querySelector(".huy-table-statistic-revenue").innerHTML += `
             <div class="huy-table-item-revenue">
               <label>${sttCount}</label>
+              <label>${new Date(model.orders[i]['date']).getDate()}/${new Date(model.orders[i]['date']).getMonth()+1}/${new Date(model.orders[i]['date']).getFullYear()}</label>
+              <label>${model.orders[i]['id']}</label>
+              <label>${totalQtyOrder}</label>
+              <label>${model.orders[i]['totalPrice']}</label>
             </div>
             `;
             document.querySelector(".huy-table-statistic-product").innerHTML += `
@@ -66,13 +75,23 @@ export const handleEventStatistics = () => {
           }
         }
       }
-      else if (newFromDate == newToDate) {
+      else if (newFromDate.getDate() == newToDate.getDate() && newFromDate.getMonth() == newToDate.getMonth() && newFromDate.getFullYear() == newToDate.getFullYear()) {
         for (let i = 0; i < model.orders.length; i++) {
-          if (newFromDate == new Date(model.orders[i]['date'])){
+          let totalQtyOrder = 0;
+          if (newFromDate.getDate() == new Date(model.orders[i]['date']).getDate() && newFromDate.getMonth() == new Date(model.orders[i]['date']).getMonth() && newFromDate.getFullYear() == new Date(model.orders[i]['date']).getFullYear() && model.orders[i]['state'] == "process"){
             //CreateStatistic
+            sttCount += 1;
+            for (let j = 0; j < model.orders[i]['detail'].length; j++) {
+              console.log(Number(model.orders[i]['detail'][j]['qty']));
+              totalQtyOrder += Number(model.orders[i]['detail'][j]['qty']);
+            }
             document.querySelector(".huy-table-statistic-revenue").innerHTML += `
             <div class="huy-table-item-revenue">
-
+              <label>${sttCount}</label>
+              <label>${new Date(model.orders[i]['date']).getDate()}/${new Date(model.orders[i]['date']).getMonth()+1}/${new Date(model.orders[i]['date']).getFullYear()}</label>
+              <label>${model.orders[i]['id']}</label>
+              <label>${totalQtyOrder}</label>
+              <label>${model.orders[i]['totalPrice']}</label>
             </div>
             `;
             document.querySelector(".huy-table-statistic-product").innerHTML += `
@@ -83,7 +102,7 @@ export const handleEventStatistics = () => {
           }
         }
       }
-      else {
+      else if (newFromDate > newToDate) {
         alert("From date must less than to date");
       }
     }
@@ -104,7 +123,7 @@ export const handleEventStatistics = () => {
       alert("Please enter year");
     } 
     else {
-      for(let i = 0; i < orders.length; i++) {
+      for(let i = 0; i < model.orders.length; i++) {
         if (model.orders[i]['state'] == "process" && new Date(model.orders[i]['date']).getFullYear() == Number(inputYear.value)){
           let tmpMonth = new Date(model.orders[i]['date']).getMonth();
           tmpData[tmpMonth] += model.orders[i]['totalPrice'];
