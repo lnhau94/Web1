@@ -42,7 +42,7 @@ defaultBtn.addEventListener("change", (e) => {
         // console.log("/home/duchuy/Desktop/Img/" + nameImg);
         const div = document.createElement("div");
         div.classList.add("huy-active-frame-img");
-        div.innerHTML = `<img class="huy-my-upload-img" src="${picFile.result}" title="${picFile.name}" alt=""><img class="huy-icon-close-img" src="./icon-close-img.png" alt="" onclick="removeImg(this)">`;
+        div.innerHTML = `<img class="huy-my-upload-img" src="${picFile.result}" title="${nameImg}" alt=""><img class="huy-icon-close-img" src="./icon-close-img.png" alt="" onclick="removeImg(this)">`;
         output.appendChild(div);
         document.querySelector(".huy-text-no-file").classList.add("huy-text-no-file-none");
         document.querySelector(".huy-icon-upload-img").classList.add("huy-icon-upload-img-none");
@@ -333,7 +333,7 @@ function btnAcceptActive() {
   }
   var check = confirm("Do you want to accept and exit ?");
   for (let i = 0; i < totalUploadImg.length; i++) {
-    listImg.push(totalUploadImg[i].childNodes[0].src);
+    listImg.push(totalUploadImg[i].childNodes[0].title);
   }
   if (check) {
     checkListSwitch();
@@ -356,7 +356,11 @@ function btnAcceptActive() {
     } else if (listQtyPd.length == 0) {
       alert("Please enter quantity for product !");
     } else {
+      let tmpId = listProduct.sort((a,b) => {
+        return (a-b)/Math.abs(a-b)
+      })[listProduct.length - 1].id + 1
       listProduct.push({
+        id: tmpId,
         name: inputNamePd.value,
         price: inputPricePd.value,
         brand: pdBrand.value,
@@ -364,7 +368,7 @@ function btnAcceptActive() {
         switches: listSwitch,
         leds: listLed,
         quantity: listQtyPd,
-        images: listImg,
+        img: listImg,
       });
       localStorage.setItem("keyboards",JSON.stringify(listProduct));
       console.log(listProduct);
