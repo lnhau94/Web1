@@ -366,7 +366,7 @@ function btnAcceptActive() {
         brand: pdBrand.value,
         wires: listConnect,
         switches: listSwitch,
-        leds: listLed,
+        led: listLed,
         quantity: listQtyPd,
         img: listImg,
       });
