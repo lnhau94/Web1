@@ -129,10 +129,14 @@ submit.addEventListener('click', e => {
         }
         if (!checkError) {
             list.push({
+                isAdmin: false,
                 email: email.value,
                 phone: phone.value,
                 username: username.value,
                 password: password.value,
+                owner: document.getElementById("fullname").value,
+                cart: [],
+                history: []
             })
             localStorage.setItem('accounts', JSON.stringify(list));
             console.log(list) 

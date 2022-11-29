@@ -35,7 +35,7 @@ body {
 
 .hau-product-info-table{
     width: 90%;
-    height: 30px;
+    height: 45px;
     border-radius: 5px;
     color: var(--dark-blue-color);
     border: #fff 1px solid;
@@ -290,7 +290,7 @@ h1 {
 .hau-account-header,
 .hau-account-item {
     display: grid;
-    grid-template-columns: auto auto 15% 20% 15% 15% 10%;
+    grid-template-columns: auto auto 15% 15% 25% 10%;
     height: 50px;
     align-items: center;
     margin-bottom: 2px;

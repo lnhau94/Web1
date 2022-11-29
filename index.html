@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/yang/style.css">
     <link rel="stytesheet" type="text/css" hrer="/css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
     <link
         href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Montserrat:wght@700;800;900&dislay=swap"
         rel="stylesheet">
@@ -21,33 +22,68 @@
     </div>
     <div class="hau-form-container" id="form">
     </div>
-    <div class="hero">
-        <nav>
-            <h2 class="logo">Water<span>Yang</span></h2>
-            <ul>
-                <li><a href="#" id="btn-home">Trang chủ</a></li>
-                <li><a href="#" id="btn-nav-signup">Đăng kí</a></li>
-                <li><a href="#" id="btn-nav-signin">Đăng nhập</a></li>
-            </ul>
-            <div class="search">
-                <div class="icon search"></div>
-                <div class="input">
-                    <input type="text" placeholder="Search" id="mysearch">
+    <div class="hau-header">
+        <div class="hero">
+            <nav>
+                <h2 class="logo">Water<span>Yang</span></h2>
+                <div class="search">
+                    <div class="icon search"></div>
+                    <div class="input">
+                        <input type="text" placeholder="Search" id="mysearch">
+                    </div>
+                    <span class="clear" onclick="document.getElementById('mysearch').value = ''"></span>
                 </div>
-                <span class="clear" onclick="document.getElementById('mysearch').value = ''"></span>
+                <ul>
+                    <li><a href="#" id="btn-home">Trang chủ</a></li>
+                    <li>
+                        <ul class="login-option">
+                            <li><a href="#" id="btn-nav-signup">Đăng kí</a></li>
+                            <li><a href="#" id="btn-nav-signin">Đăng nhập</a></li>
+                        </ul>
+                        <ul class="account-function">
+                            <li><button class="hau-func-btn" id="history-btn">History</button></li>
+                            <li><button class="hau-func-btn" id="profile-btn">Profile</button></li>
+                            <li><button class="hau-func-btn" id="logout-btn">Log out</button></li>
+                            <li class="admin-link"><a href="/admin/index.html">Go to admin</a></li>
+                        </ul>
+                        <script>
+                            console.log(localStorage.getItem("currentaccounts"))
+                            function loginAuth(){
+                                if(localStorage.getItem("currentaccounts")!= "null"){
+                                    document.querySelector(".login-option").style.display = "none";
+                                    document.querySelector(".account-function").style.display = "inline-block";
+                                }else{
+                                    document.querySelector(".account-function").style.display = "none";
+                                    document.querySelector(".login-option").style.display = "inline-block";
+                                }
+
+                                if(!localStorage.getItem("currentaccounts").isAdmin){
+                                    document.querySelector(".admin-link").style.display = "none";
+                                }
+                            }
+                            loginAuth();
+                            
+                            document.querySelector("#logout-btn").addEventListener("click", ()=>{
+                                localStorage.setItem("currentaccounts",JSON.stringify(null));
+                                loginAuth();
+                            });
+                        </script>
+                    </li>
+                </ul>
+                <button type="button"><i class="fa-solid fa-cart-shopping"></i></button>
+            </nav>
+            <div class="brand-menu">
+                <ul>
+                    <li><a href="#">AKKO</a></li>
+                    <li><a href="#">DAREU</a></li>
+                    <li><a href="#">IQUNIX</a></li>
+                    <li><a href="#">LEOPOLD</a></li>
+                    <li><a href="#">LOGITECH</a></li>
+                </ul>
             </div>
-            <button type="button">Giỏ hàng</button>
-        </nav>
-        <div class="brand-menu">
-            <ul>
-                <li><a href="#">AKKO</a></li>
-                <li><a href="#">DAREU</a></li>
-                <li><a href="#">IQUNIX</a></li>
-                <li><a href="#">LEOPOLD</a></li>
-                <li><a href="#">LOGITECH</a></li>
-            </ul>
         </div>
     </div>
+    
     <div class="slider">
         <div class="slides">
             <input type="radio" name="radio-btn" id="radio1">
@@ -80,7 +116,8 @@
             <label for="radio4" class="manual-btn"></label>
         </div>
     </div>
-    <script src="/yang/app2.js"></script>
+    <div class="pagecontent" id="productcontent"></div>
+    <script type="module" src="/yang/app2.js"></script>
 </body>
 
 </html>
