@@ -44,7 +44,16 @@ export const handleEventStatistics = () => {
   submitDate.addEventListener("click", () => {
     if (fromDate.value != "" && toDate.value != "") {
       // document.querySelector("").innerHTML = '';
-      console.log(model.keyboards[0]['id']);
+      let newFromDate = new Date(fromDate.value);
+      let newToDate = new Date(toDate.value);
+      if (newFromDate < newToDate) {}
+      else if (newFromDate == newToDate) {}
+      else {
+        alert("From date must less than to date");
+      }
+      console.log(newFromDate < newToDate);
+      // console.log(model.keyboards[0]['id']);
+      // console.log(newFromDate.getMonth()+1);
     }
     else if (fromDate.value == "" && toDate.value == "") {
       alert("Please enter from date and to date");
