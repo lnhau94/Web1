@@ -82,13 +82,7 @@ export const productView = {
                     <label class="hau-cart-item-name">${product.name}</label>
                     <img src="/imgs/DataKeyboard/${product.img[0]}">
                     <div>
-                        <button class="hau-func-btn">
-                            <i class="fa-solid fa-minus"></i>
-                        </button>
-                        <input class="hau-cart-item-txt" type="text" value="${e.qty}">
-                        <button class="hau-func-btn">
-                            <i class="fa-solid fa-add"></i>
-                        </button>
+                        <input class="hau-cart-item-txt" type="number" min="1" value="${e.qty}" oninput="validity.valid||(value='')">      
                     </div>
                     <div>
                         <input class="buy-checker hau-checkbox-func" type="checkbox" name="checker">

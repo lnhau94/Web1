@@ -143,6 +143,11 @@ export const controller = {
             controller.showAccountPage();
             view.changeCurrentBtn(document.getElementById("accountBtn"));
         });
+
+        document.getElementById("logout").addEventListener("click", () => {
+            localStorage.setItem("currentaccounts",JSON.stringify(null));
+            window.location.href = "/index.html";
+        });
     },
     init() {
         view.init();

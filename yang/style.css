@@ -693,10 +693,12 @@ body.hide-body {
     width: 80%;
     margin-left: 10%;
 }
-.hau-cart-item input[type="text"]{
+.hau-cart-item input[type="number"]{
     width: 50px;
     height: 35px;
     border-radius: 10px;
+    padding: 5px;
+    margin: 10px;
 }
 .hau-checkbox-func{
     width: 20px;
