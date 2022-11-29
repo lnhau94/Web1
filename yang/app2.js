@@ -10,7 +10,7 @@ setInterval(function(){
     if (counter > 4) {
         counter = 1;
     }
-}, 5000);
+}, 6000);
 
 icon.onclick = function(){
     search.classList.toggle('active')

@@ -1,4 +1,3 @@
-import {orders} from './data.js'
 import {model} from './hau_model.js'
 
 export const handleEventStatistics = () => {
@@ -42,9 +41,51 @@ export const handleEventStatistics = () => {
     document.querySelector(".huy-year-picker").classList.add("huy-year-picker-on");
   });
   submitDate.addEventListener("click", () => {
+    document.querySelector(".huy-table-statistic-revenue").innerHTML = '';
+    document.querySelector(".huy-table-statistic-product").innerHTML = '';
     if (fromDate.value != "" && toDate.value != "") {
       // document.querySelector("").innerHTML = '';
-      console.log(model.keyboards[0]['id']);
+      let sttCount = 0;
+      let newFromDate = new Date(fromDate.value);
+      let newToDate = new Date(toDate.value);
+      if (newFromDate < newToDate) {
+        for (let i = 0; i < model.orders.length; i++) {
+          if (newFromDate <= new Date(model.orders[i]['date']) && newToDate >= new Date(model.orders[i]['date'])){
+            //CreateStatistic
+            sttCount += 1;
+            document.querySelector(".huy-table-statistic-revenue").innerHTML += `
+            <div class="huy-table-item-revenue">
+              <label>${sttCount}</label>
+            </div>
+            `;
+            document.querySelector(".huy-table-statistic-product").innerHTML += `
+            <div class="huy-table-item-product">
+
+            </div>
+            `;
+          }
+        }
+      }
+      else if (newFromDate == newToDate) {
+        for (let i = 0; i < model.orders.length; i++) {
+          if (newFromDate == new Date(model.orders[i]['date'])){
+            //CreateStatistic
+            document.querySelector(".huy-table-statistic-revenue").innerHTML += `
+            <div class="huy-table-item-revenue">
+
+            </div>
+            `;
+            document.querySelector(".huy-table-statistic-product").innerHTML += `
+            <div class="huy-table-item-product">
+
+            </div>
+            `;
+          }
+        }
+      }
+      else {
+        alert("From date must less than to date");
+      }
     }
     else if (fromDate.value == "" && toDate.value == "") {
       alert("Please enter from date and to date");
@@ -64,9 +105,9 @@ export const handleEventStatistics = () => {
     } 
     else {
       for(let i = 0; i < orders.length; i++) {
-        if (orders[i]['state'] == "process" && orders[i]['date'].getFullYear() == Number(inputYear.value)){
-          let tmpMonth = orders[i]['date'].getMonth();
-          tmpData[tmpMonth] += orders[i]['totalPrice'];
+        if (model.orders[i]['state'] == "process" && new Date(model.orders[i]['date']).getFullYear() == Number(inputYear.value)){
+          let tmpMonth = new Date(model.orders[i]['date']).getMonth();
+          tmpData[tmpMonth] += model.orders[i]['totalPrice'];
         }
       }
       const dataGraph = {
