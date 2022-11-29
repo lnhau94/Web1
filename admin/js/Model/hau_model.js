@@ -67,6 +67,35 @@ export const model = {
             }
         }
         model.save();
+    },
+    addToCart(item,user){
+        model.accounts.forEach(e=>{
+            if(e.username == user.username){
+                let flag = true;
+                e.cart.forEach((itemIC)=>{
+                    if(itemIC.id == Number(item)){
+                        itemIC.qty += 1;
+                        flag = false;
+                    }
+                });
+                if(flag){
+                    e.cart.push({id:item,qty:1});
+                }
+                console.log(e.cart.length);
+                localStorage.setItem("currentaccounts",JSON.stringify(e));
+
+                console.log(JSON.parse(localStorage.getItem("currentaccounts")));
+            }
+        })
+    },
+    findProductById(id){
+        let finder 
+        model.keyboards.forEach(e =>{
+            if(e.id == Number(id)){
+                finder =  e;
+            }
+        })
+        return finder;
     }
     
 };

@@ -8,6 +8,7 @@ export const sellController = {
         sellController.showProductSell(sellController.tempData,1);
         sellController.eventHandleSearch();
         sellController.eventHandleBrandFilter();
+        sellController.eventHandleShowCart();
     },
     eventHandlePagination(){
         document.querySelectorAll('.hau-pagination').forEach(element => {
@@ -44,8 +45,35 @@ export const sellController = {
             })
         })
     },
+    eventHandleAddtoCart(){
+        document.querySelectorAll(".add-to-cart-btn").forEach((e)=>{
+            e.addEventListener("click",()=>{
+                // 
+                if(JSON.parse(localStorage.getItem("currentaccounts")=="null")){
+                    alert("Vui lòng đăng nhập để mua hàng");
+                }else{
+                    // JSON.parse(localStorage.getItem("currentaccounts")).cart.push()
+                    model.addToCart(e.parentNode.parentNode.parentNode.parentNode.dataset.id,
+                        JSON.parse(localStorage.getItem("currentaccounts")))
+                    
+                }
+            });
+        });
+    },
     showProductSell(data,page){
         document.querySelector('.pagecontent').innerHTML = productView.renderProduct(data,page);
         sellController.eventHandlePagination();
+        sellController.eventHandleAddtoCart();
+    },
+    showCart(){
+        document.getElementById("modal").innerHTML = productView.renderCart();
+    },
+    eventHandleShowCart(){
+        document.getElementById("show-cart-btn").addEventListener("click",()=>{
+            sellController.showCart();
+            document.getElementById("cart-close-btn").addEventListener("click",()=>{
+                document.getElementById("modal").innerHTML = ""
+            })
+        })
     }
 }
