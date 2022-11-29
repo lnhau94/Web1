@@ -75,5 +75,10 @@ export const sellController = {
                 document.getElementById("modal").innerHTML = ""
             })
         })
+    },
+    eventHandleCash(){
+        document.getElementById("cart-check-buy-btn").addEventListener("click",()=>{
+            
+        })
     }
 }

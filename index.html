@@ -48,19 +48,21 @@
                             <li class="admin-link"><a href="/admin/index.html">Go to admin</a></li>
                         </ul>
                         <script>
-                            console.log(localStorage.getItem("currentaccounts"))
                             function loginAuth(){
-                                if(localStorage.getItem("currentaccounts")!= "null"){
+                                if(JSON.parse(localStorage.getItem("currentaccounts"))!= null){
                                     document.querySelector(".login-option").style.display = "none";
                                     document.querySelector(".account-function").style.display = "inline-block";
+                                    if(!JSON.parse(localStorage.getItem("currentaccounts")).isAdmin){
+                                        document.querySelector(".admin-link").style.display = "none";
+                                    }
                                 }else{
                                     document.querySelector(".account-function").style.display = "none";
                                     document.querySelector(".login-option").style.display = "inline-block";
+                                    console.log(JSON.parse(localStorage.getItem("currentaccounts")))
+                                    
                                 }
+                                
 
-                                if(!localStorage.getItem("currentaccounts").isAdmin){
-                                    document.querySelector(".admin-link").style.display = "none";
-                                }
                             }
                             loginAuth();
                             
