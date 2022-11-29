@@ -81,10 +81,8 @@ export const model = {
                 if(flag){
                     e.cart.push({id:item,qty:1});
                 }
-                console.log(e.cart.length);
                 localStorage.setItem("currentaccounts",JSON.stringify(e));
-
-                console.log(JSON.parse(localStorage.getItem("currentaccounts")));
+                model.save();
             }
         })
     },
@@ -96,6 +94,30 @@ export const model = {
             }
         })
         return finder;
+    },
+    addNewOrder(orderDetail){
+        let nid = model.orders.sort((a,b)=>{
+            return (a-b)/Math.abs(a-b);
+        })[model.orders.length-1].id + 1;
+        let ttp = 0;
+        orderDetail.forEach(e =>{
+            ttp += model.findProductById(e.id).price*e.qty;
+        })
+        let nod = {
+            id: nid,
+            date: new Date(),
+            state: "non-process",
+            totalPrice: ttp,
+            detail: orderDetail
+        }
+        model.accounts.forEach(e => {
+            if(e.username == JSON.parse(localStorage.getItem("currentaccounts")).username){
+                e.history.push(nod);
+                console.log(e);
+            }
+        })
+        model.orders.push(nod);
+        model.save();
     }
     
 };
