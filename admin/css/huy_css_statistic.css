@@ -101,6 +101,12 @@ canvas {
   font-weight: 638;
   border: #070d2c 1px solid;
 }
+.huy-table-statistic-revenue {
+  overflow-y: scroll;
+}
+.huy-table-statistic-product {
+  overflow-y: scroll;
+}
 #huyChart {
   width: 70% !important;
   height: 80% !important;
