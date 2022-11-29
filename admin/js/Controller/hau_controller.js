@@ -28,7 +28,7 @@ export const controller = {
     eventHandelRemoveProduct(){
         document.querySelectorAll(".hau-func-delete-product").forEach( element => {
             element.addEventListener("click", (e)=>{
-                if (window.confirm("Bạn có chắc chắn muốn xóa không sản phẩm này?")){
+                if (window.confirm("Bạn có chắc chắn muốn xóa sản phẩm này?")){
                     model.removeProduct(element.parentNode.parentNode.parentNode.dataset.id);
                     console.log(element.parentNode.parentNode.parentNode.dataset.id);
                     controller.showProductPage();
@@ -57,6 +57,17 @@ export const controller = {
             document.querySelector(".huy-container-info-pd").classList.remove("huy-container-info-pd-on");
             document.querySelector(".huy-container-info-pd").classList.add("huy-container-info-pd-on");
         });
+    },
+    eventHandleRemoveAccount(){
+        document.querySelectorAll(".hau-func-delete-account").forEach(e => {
+            e.addEventListener("click",()=>{
+                if (window.confirm("Bạn có chắc chắn muốn xóa tài khoản này?")){
+                    model.removeAccount(e.parentNode.parentNode.dataset.user);
+                    console.log(e.parentNode.parentNode.dataset.user);
+                    controller.showAccountPage();
+                }
+            });
+        })
     },
     eventHandleShowProductImage(){
         document.querySelectorAll(".hau-product-image").forEach(element=>{
@@ -92,6 +103,7 @@ export const controller = {
             
         `;
         adminAccountView.showAccount(model.accounts);
+        controller.eventHandleRemoveAccount();
     },
     showOrderPage() {
         document.getElementById("hau-content-page").innerHTML = `

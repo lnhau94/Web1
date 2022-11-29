@@ -21,7 +21,7 @@
 
 .hau-form-container:has(.container),.hau-form-container:has(.container-2){
     display: flex;
-    z-index: 3;
+    z-index: 15;
 }
 .hau-form-container:has(.container)~.hero{
     display: none;
@@ -518,23 +518,146 @@ body.hide-body {
 #btn-change{
     display: none;
 }
-
-#btn-change + label:before{
+#btn-change{
     display: inline-block;
-    width: 25px;
-    font-family: "Font Awesome";
-    content: "";
-}
+    width: 15px;
+} 
 #label-show-pw{
     display: inline-block;
 }
 #btn-change, #label-show-pw{
     margin: 0px;
     padding: 0px;
-    
     height: 25px;
     line-height: 25px;
 }
 .show-pw-container{
-    display: block
+    display: block;
+    height: 30px;
+    line-height: 25px;
+}
+
+
+.hau-product-info-sell{
+    display: block;
+}
+.hau-product-name{
+    font-size: 20px;
+    font-weight: 700;
+}
+.hau-product-price{
+    font-size: 15px;
+    font-weight: 700;
+    color:#ff0099
+}
+.hau-product-image-holder{
+    width: 90%;
+    display: block;
+}
+.hau-product-image-holder div{
+    display: inline;
+
+}
+.hau-product-image{
+    width: 25%;
+    display: inline-block;
+    transition: all 0.3s ease-in;
+}
+
+
+.hau-product-image-show{
+    display: none;
+    width: 0px;
+}
+
+.hau-product-image:hover ~ .hau-product-image-show{
+    position: absolute; 
+    bottom: 100%;
+    left: 0px; 
+    display: block;
+    width: 100%;
+    box-shadow: #999 5px 5px;
+    border: #ff0099 2px solid;
+    border-radius: 5px;
+}
+.hau-product-image:hover{
+    width: 30%;
+}
+
+
+.product-sell-container{
+    display: grid;
+    grid-template-columns: 32% 32% 32%;
+    row-gap: auto;
+    column-gap: 2%;
+}
+.hau-sell-product-detail{
+    display:none;
+}
+.hau-sell-product-detail > *{
+    display: block;
+    font-size: 15px;
+    padding: 5px;
+}
+.hau-sell-product-item {
+    position: relative;
+    border: #000 1px solid;
+    border-radius: 10px;
+    padding: 8px;
+    margin: 5px;
+    box-shadow: #999 5px 5px 0px;
+    height: 60vh;
+}
+.hau-product-teaser-info{
+    position: absolute;
+    left: 20px;
+    bottom: 10px;
+}
+
+.hau-product-image-teaser{
+    width: 90%;
+    max-width: 250px;
+}
+
+.hau-sell-product-item:hover > .hau-sell-product-detail {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    top: 10%;
+    left: 10%;
+    width: 300px;
+    display: block;
+    border-radius: 10px;
+    z-index: 10;
+}
+.hau-header{
+    position: sticky;
+    top: 0px;
+    z-index: 10;;
+}
+
+.hau-func-btn{
+    padding: 8px 16px;
+    margin: 2px;
+}
+
+.account-function ul, .account-function li {
+    padding: 0;
+    margin: 0;
+}
+
+.hau-pagination-container{
+    padding: 0;
+    margin: 5px;
+    display: flex;
+    justify-content: flex-end;
+    
+}
+.hau-pagination-container *{
+    margin: 5px;
+}
+
+.current-brand{
+    background-color: #ff0099;
+    color: white;
 }

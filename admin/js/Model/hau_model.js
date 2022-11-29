@@ -56,6 +56,17 @@ export const model = {
             }
         }
         model.save();
+    },
+    removeAccount(username){
+        for(let i= 0; i < model.accounts.length; i++){
+            if(model.accounts[i].username == username){
+                console.log(model.accounts.length)
+                model.accounts.splice(i, 1);
+                console.log(model.accounts.length)
+                break;
+            }
+        }
+        model.save();
     }
     
 };

@@ -20,7 +20,6 @@ export const adminAccountView = {
                 <label>username</label>
                 <label>password</label>
                 <label>owner name</label>
-                <label>address</label>
                 <label>phone</label>
                 <label>email</label>
                 <label>Option</label>
@@ -29,14 +28,17 @@ export const adminAccountView = {
     },
     renderAccountTableItem(account){
         return `
-            <div class="hau-account-item hau-table-item" id="hau-account-item">
+            <div class="hau-account-item hau-table-item" id="hau-account-item" data-user="${account.username}">
                 <label>${account.username}</label>
                 <label>${account.password}</label>
                 <label>${account.owner}</label>
-                <label>${account.address}</label>
                 <label>${account.phone}</label>
                 <label>${account.email}</label>
-                <div><button>Del</button></div>
+                <div>
+                    <button class="hau-button hau-func-delete-account">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </div>
             </div>
         `
     },
