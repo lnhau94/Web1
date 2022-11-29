@@ -49,11 +49,14 @@
                         </ul>
                         <script>
                             function loginAuth(){
-                                if(JSON.parse(localStorage.getItem("currentaccounts"))!= null){
+                                if(JSON.parse(localStorage.getItem("currentaccounts")) != null &&
+                                JSON.parse(localStorage.getItem("currentaccounts")) != "null" ){
                                     document.querySelector(".login-option").style.display = "none";
                                     document.querySelector(".account-function").style.display = "inline-block";
-                                    if(!JSON.parse(localStorage.getItem("currentaccounts")).isAdmin){
+                                    if(!JSON.parse(localStorage.getItem("currentaccounts")).isadmin){
                                         document.querySelector(".admin-link").style.display = "none";
+                                    }else{
+                                        document.querySelector(".admin-link").style.display = "inline-block";
                                     }
                                 }else{
                                     document.querySelector(".account-function").style.display = "none";

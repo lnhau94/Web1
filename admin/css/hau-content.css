@@ -366,7 +366,7 @@ h1 {
     transition: all 0.5s ease;
 }
 
-.hau-order-item:hover {
+.hau-order-holder:hover>.hau-order-item {
     height: 70px;
     font-size: 18px;
     font-weight: 500;
@@ -411,4 +411,29 @@ h1 {
 .hau-content-page {
     height: 100vh;
     overflow-y: hidden;
+}
+
+.hau-order-detail{
+    display: inline-block;
+    width: 30%;
+    color: white;
+    transition: all 0.5s ease;
+}
+
+.hau-order-detail *{
+    display: block;
+    margin-top: 5px;
+}
+
+.hau-order-detail-container {
+    height: 0px;
+    /* display: none; */
+    overflow-x: scroll;
+    background-color: var(--dark-blue-color);
+    opacity: 0.8;
+    transition: all 0.5s ease;
+}
+.hau-order-holder:hover > .hau-order-detail-container{
+    /* display: block; */
+    height: 150px;
 }
