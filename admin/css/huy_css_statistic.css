@@ -72,7 +72,7 @@ canvas {
 }
 .huy-table-item-product {
   display: none;
-  grid-template-columns: auto 20% 10% 10% 10% 10% 10% 10% 15%;
+  grid-template-columns: auto 40% 15% 15% 20%;
   height: 50px;
   align-items: center;
   margin-bottom: 2px;
@@ -104,12 +104,15 @@ canvas {
   display: grid;
 }
 .huy-table-header-statistic-product {
-  grid-template-columns: auto 20% 10% 10% 10% 10% 10% 10% 15%;
+  grid-template-columns: auto 40% 15% 15% 20%;
 }
 .huy-table-header-statistic-product.huy-table-header-statistic-product-on {
   display: grid;
 }
 .huy-table-header-statistic-revenue * {
+  margin-left: 100px;
+}
+.huy-table-header-statistic-product * {
   margin-left: 100px;
 }
 .huy-graph-revenue {
