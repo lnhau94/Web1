@@ -38,10 +38,6 @@ export const statisticsView = {
     <div class="huy-table-header-statistic-product">
       <label>STT</label>
       <label>Tên sản phẩm</label>
-      <label>Switch</label>
-      <label>Wire</label>
-      <label>Brand</label>
-      <label>Led</label>
       <label>Số lượng</label>
       <label>Đơn giá</label>
       <label>Thành tiền</label>
