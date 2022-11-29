@@ -75,6 +75,8 @@ export const handleEventStatistics = () => {
       let tmpKeyBoard = new Object();
       let newFromDate = new Date(fromDate.value);
       let newToDate = new Date(toDate.value);
+      let tmpTotalQtyRN = 0;
+      let tmpTotalPriceRN = 0;
       if (newFromDate < newToDate) {
         for (let i = 0; i < model.orders.length; i++) {
           let totalQtyOrder = 0;
@@ -93,6 +95,8 @@ export const handleEventStatistics = () => {
               <label>${model.orders[i]['totalPrice']}</label>
             </div>
             `;
+            tmpTotalPriceRN += model.orders[i]['totalPrice'];
+            tmpTotalQtyRN += totalQtyOrder;
             for (let j = 0; j < model.orders[i]['detail'].length; j++) {
               if (tmpKeyBoard.hasOwnProperty(model.orders[i]['detail'][j]['id']) == false) {
                 for (let t = 0; t < model.keyboards.length; t++) {
@@ -114,6 +118,15 @@ export const handleEventStatistics = () => {
             }
           }
         }
+        document.querySelector(".huy-table-statistic-revenue").innerHTML += `
+        <div class="huy-table-item-revenue">
+          <label></label>
+          <label>TOTAL</label>
+          <label></label>
+          <label>${tmpTotalQtyRN}</label>
+          <label>${tmpTotalPriceRN}</label>
+        </div>
+        `;
         for (const [key, value] of Object.entries(tmpKeyBoard)) {
           sttCountPD += 1;
           document.querySelector(".huy-table-statistic-product").innerHTML += `
@@ -184,6 +197,8 @@ export const handleEventStatistics = () => {
               <label>${model.orders[i]['totalPrice']}</label>
             </div>
             `;
+            tmpTotalPriceRN += model.orders[i]['totalPrice'];
+            tmpTotalQtyRN += totalQtyOrder;
             for (let j = 0; j < model.orders[i]['detail'].length; j++) {
               if (tmpKeyBoard.hasOwnProperty(model.orders[i]['detail'][j]['id']) == false) {
                 for (let t = 0; t < model.keyboards.length; t++) {
@@ -205,6 +220,15 @@ export const handleEventStatistics = () => {
             }
           }
         }
+        document.querySelector(".huy-table-statistic-revenue").innerHTML += `
+        <div class="huy-table-item-revenue">
+          <label></label>
+          <label>TOTAL</label>
+          <label></label>
+          <label>${tmpTotalQtyRN}</label>
+          <label>${tmpTotalPriceRN}</label>
+        </div>
+        `;
         for (const [key, value] of Object.entries(tmpKeyBoard)) {
           sttCountPD += 1;
           document.querySelector(".huy-table-statistic-product").innerHTML += `
