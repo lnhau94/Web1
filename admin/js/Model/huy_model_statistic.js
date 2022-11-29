@@ -1,4 +1,3 @@
-import {orders} from './data.js'
 import {model} from './hau_model.js'
 
 export const handleEventStatistics = () => {
@@ -46,14 +45,23 @@ export const handleEventStatistics = () => {
       // document.querySelector("").innerHTML = '';
       let newFromDate = new Date(fromDate.value);
       let newToDate = new Date(toDate.value);
-      if (newFromDate < newToDate) {}
-      else if (newFromDate == newToDate) {}
+      if (newFromDate < newToDate) {
+        for (let i = 0; i < model.orders.length; i++) {
+          if (newFromDate <= new Date(model.orders[i]['date']) && newToDate >= new Date(model.orders[i]['date'])){
+            //CreateStatistic
+          }
+        }
+      }
+      else if (newFromDate == newToDate) {
+        for (let i = 0; i < model.orders.length; i++) {
+          if (newFromDate == new Date(model.orders[i]['date'])){
+            //CreateStatistic
+          }
+        }
+      }
       else {
         alert("From date must less than to date");
       }
-      console.log(newFromDate < newToDate);
-      // console.log(model.keyboards[0]['id']);
-      // console.log(newFromDate.getMonth()+1);
     }
     else if (fromDate.value == "" && toDate.value == "") {
       alert("Please enter from date and to date");
@@ -73,9 +81,9 @@ export const handleEventStatistics = () => {
     } 
     else {
       for(let i = 0; i < orders.length; i++) {
-        if (orders[i]['state'] == "process" && orders[i]['date'].getFullYear() == Number(inputYear.value)){
-          let tmpMonth = orders[i]['date'].getMonth();
-          tmpData[tmpMonth] += orders[i]['totalPrice'];
+        if (model.orders[i]['state'] == "process" && new Date(model.orders[i]['date']).getFullYear() == Number(inputYear.value)){
+          let tmpMonth = new Date(model.orders[i]['date']).getMonth();
+          tmpData[tmpMonth] += model.orders[i]['totalPrice'];
         }
       }
       const dataGraph = {
