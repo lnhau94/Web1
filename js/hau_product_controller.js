@@ -55,7 +55,7 @@ export const sellController = {
                     // JSON.parse(localStorage.getItem("currentaccounts")).cart.push()
                     model.addToCart(e.parentNode.parentNode.parentNode.parentNode.dataset.id,
                         JSON.parse(localStorage.getItem("currentaccounts")))
-                    
+                    alert("Thêm vào giỏ hàng thành công");   
                 }
             });
         });
@@ -85,16 +85,20 @@ export const sellController = {
             let odlist = []
             document.querySelectorAll(".buy-checker").forEach(element =>{
                 if(element.checked){
+                    console.log(element.parentNode.parentNode.childNodes[5].childNodes[1].value)
                     odlist.push({
                         id:element.parentNode.parentNode.dataset.id,
-                        qty:element.parentNode.parentNode.childNodes[5].childNodes[3].value
+                        qty:element.parentNode.parentNode.childNodes[5].childNodes[1].value
                     })
                     
                     sellController.removeFromCart(element.parentNode.parentNode.dataset.id);
                 }
                 
             })
-            model.addNewOrder(odlist);
+            if (confirm("Bạn có chắc muốn thanh toán không ?")) {
+              model.addNewOrder(odlist);
+              alert("Thanh toán thành công.")
+            }
         })
     },
     removeFromCart(id){
