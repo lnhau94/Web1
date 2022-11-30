@@ -27,20 +27,27 @@ export const sellController = {
     },
     search(){
         let text = document.getElementById("mysearch").value;
+        sellController.tempData = model.keyboards
         sellController.tempData = sellController.tempBrand == "ALL"
             ?model.keyboards
             :model.keyboards.filter(
                 (element)=>{
                     return element.brand.toUpperCase().includes(sellController.tempBrand.toUpperCase());
             })
-        sellController.tempData = sellController.tempData.filter((element)=>{
-            return element.name.toUpperCase().includes(text.toUpperCase());
-        })
-        // sellController.showProductSell(sellController.tempData,1);
-        // return sellController.tempData;
+
         console.log(sellController.tempData)
+        if (text != ""){
+            sellController.tempData = sellController.tempData.filter((element)=>{
+                return element.name.toUpperCase().includes(text.toUpperCase());
+            })
+        }
+        
+        // sellController.showProductSell(sellController.tempData,1);
+        // // return sellController.tempData;
+        // console.log(sellController.tempData)
         renderProducts(sellController.tempData);
-        handlePgn(renderPgn(1,Math.ceil(sellController.tempData.length / 8)))
+        let NoPage = Math.ceil(sellController.tempData.length / 8)
+        handlePgn(renderPgn(1,NoPage <= 5 ? NoPage : 5))
     },
     eventHandleBrandFilter(){
         document.querySelectorAll(".brand-menu-item").forEach((e)=>{
