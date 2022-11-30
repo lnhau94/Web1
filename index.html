@@ -13,7 +13,21 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Montserrat:wght@700;800;900&dislay=swap"
         rel="stylesheet">
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./css/grid_system.css" />
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/responsive.css" />
+    <link
+      rel="stylesheet"
+      href="./font/fontawesome-free-6.2.0-web/css/all.min.css"
+    />
 
 <body>
     <div class="hau-container" id="root">
@@ -42,8 +56,8 @@
                             <li><a href="#" id="btn-nav-signin">Đăng nhập</a></li>
                         </ul>
                         <ul class="account-function">
-                            <li><button class="hau-func-btn" id="history-btn">History</button></li>
-                            <li><button class="hau-func-btn" id="profile-btn">Profile</button></li>
+                            <!-- <li><button class="hau-func-btn" id="history-btn">History</button></li>
+                            <li><button class="hau-func-btn" id="profile-btn">Profile</button></li> -->
                             <li><button class="hau-func-btn" id="logout-btn">Log out</button></li>
                             <li class="admin-link"><a href="/admin/index.html">Go to admin</a></li>
                         </ul>
@@ -76,7 +90,7 @@
                         </script>
                     </li>
                 </ul>
-                <button type="button" id="show-cart-btn"><i class="fa-solid fa-cart-shopping"></i></button>
+                <button type="button" style="display: none;" id="show-cart-btn"><i class="fa-solid fa-cart-shopping"></i></button>
             </nav>
             <div class="brand-menu">
                 <ul>
@@ -122,8 +136,10 @@
             <label for="radio4" class="manual-btn"></label>
         </div>
     </div>
-    <div class="pagecontent" id="productcontent"></div>
+    <div class="hieu-root"></div>
+    <!-- <div class="pagecontent" id="productcontent"></div> -->
     <script type="module" src="/yang/app2.js"></script>
+    <script type="module" src="/js/main.js"></script>
 </body>
 
 </html>
