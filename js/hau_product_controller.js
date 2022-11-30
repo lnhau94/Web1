@@ -1,11 +1,14 @@
 import { model } from "../admin/js/Model/hau_model.js";
 import { productView } from "./hau-product-view.js";
+import { renderProducts } from "./main.js";
+import { renderPgn } from "./main.js";
+import { handlePgn } from "./main.js";
 
 export const sellController = {
     tempData: model.keyboards,
     tempBrand: "ALL",
     init(){
-        sellController.showProductSell(sellController.tempData,1);
+        // sellController.showProductSell(sellController.tempData,1);
         sellController.eventHandleSearch();
         sellController.eventHandleBrandFilter();
         sellController.eventHandleShowCart();
@@ -33,7 +36,11 @@ export const sellController = {
         sellController.tempData = sellController.tempData.filter((element)=>{
             return element.name.toUpperCase().includes(text.toUpperCase());
         })
-        sellController.showProductSell(sellController.tempData,1);
+        // sellController.showProductSell(sellController.tempData,1);
+        // return sellController.tempData;
+        console.log(sellController.tempData)
+        renderProducts(sellController.tempData);
+        handlePgn(renderPgn(1,Math.ceil(sellController.tempData.length / 8)))
     },
     eventHandleBrandFilter(){
         document.querySelectorAll(".brand-menu-item").forEach((e)=>{

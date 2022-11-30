@@ -631,7 +631,7 @@ body.hide-body {
     z-index: 10;
 }
 .hau-header{
-    position: sticky;
+    /* position: sticky; */
     top: 0px;
     z-index: 10;;
 }
