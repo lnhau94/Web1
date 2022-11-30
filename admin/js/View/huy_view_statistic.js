@@ -47,13 +47,12 @@ export const statisticsView = {
       <div class="huy-table-statistic-product">
 
       </div>
-    </div>
+      <div class="huy-graph-revenue">
+        <table class="huy-table-revenue">
 
-    <div class="huy-graph-revenue">
-      <table class="huy-table-revenue">
-
-      </table>
-      <canvas id="huyChart" style="max-width:900px"></canvas>
+        </table>
+        <canvas id="huyChart" style="max-width:900px"></canvas>
+      </div>
     </div>
     `
   }
