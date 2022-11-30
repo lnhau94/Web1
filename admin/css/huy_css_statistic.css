@@ -156,3 +156,7 @@ canvas {
   width: 70% !important;
   height: 80% !important;
 }
+.huy-content{
+  height: 60%;
+  overflow-y: scroll;
+}

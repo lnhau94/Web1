@@ -25,26 +25,30 @@ export const statisticsView = {
       <button class="huy-submit-year">Submit</button>
     </div>
     <br><br>
-    <div class="huy-table-header-statistic-revenue">
-      <label>STT</label>
-      <label>Ngày lập hóa đơn</label>
-      <label>Mã hóa đơn</label>
-      <label>Số lượng sản phẩm</label>
-      <label>Thành tiền</label>
-    </div>
-    <div class = "huy-table-statistic-revenue">
 
-    </div>
-    <div class="huy-table-header-statistic-product">
-      <label>STT</label>
-      <label>Tên sản phẩm</label>
-      <label>Số lượng</label>
-      <label>Đơn giá</label>
-      <label>Thành tiền</label>
-    </div>
-    <div class="huy-table-statistic-product">
+    <div class="huy-content">
+      <div class="huy-table-header-statistic-revenue">
+        <label>STT</label>
+        <label>Ngày lập hóa đơn</label>
+        <label>Mã hóa đơn</label>
+        <label>Số lượng sản phẩm</label>
+        <label>Thành tiền</label>
+      </div>
+      <div class = "huy-table-statistic-revenue">
 
+      </div>
+      <div class="huy-table-header-statistic-product">
+        <label>STT</label>
+        <label>Tên sản phẩm</label>
+        <label>Số lượng</label>
+        <label>Đơn giá</label>
+        <label>Thành tiền</label>
+      </div>
+      <div class="huy-table-statistic-product">
+
+      </div>
     </div>
+
     <div class="huy-graph-revenue">
       <table class="huy-table-revenue">
 
