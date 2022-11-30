@@ -116,7 +116,10 @@ const renderProducts = function renderProducts(productsList) {
   numAllProducts = productsList.length;
   console.log(productsList)
   numProductsPerPage =
-    numAllProducts <= numProductsPerPage ? numAllProducts : numProductsPerPage;
+    numAllProducts <= numProductsPerPage ? numAllProducts : 8;
+  // if(numProductsPerPage == 0) {
+  //   numProductsPerPage
+  // }
 
   var filterProducts = productsList.filter((product,index) => {
     return (
